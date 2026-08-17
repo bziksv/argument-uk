@@ -6,15 +6,36 @@
 
     function argumentRecaptchaToken(action) {
         var cfg = window.ARGUMENT_RECAPTCHA || {};
-        if (!cfg.enabled || !cfg.sitekey || typeof grecaptcha === 'undefined') {
+        if (!cfg.enabled) {
             return Promise.resolve('');
         }
+        if (!cfg.sitekey) {
+            return Promise.reject(new Error('recaptcha sitekey missing'));
+        }
         return new Promise(function(resolve, reject) {
-            grecaptcha.ready(function() {
-                grecaptcha.execute(cfg.sitekey, { action: action || 'submit' })
-                    .then(resolve)
-                    .catch(reject);
-            });
+            var tries = 0;
+            function waitApi() {
+                if (typeof grecaptcha === 'undefined' || typeof grecaptcha.execute !== 'function' || typeof grecaptcha.ready !== 'function') {
+                    if (++tries > 80) {
+                        reject(new Error('recaptcha not loaded'));
+                        return;
+                    }
+                    setTimeout(waitApi, 100);
+                    return;
+                }
+                grecaptcha.ready(function() {
+                    grecaptcha.execute(cfg.sitekey, { action: action || 'submit' })
+                        .then(function(token) {
+                            if (!token) {
+                                reject(new Error('empty recaptcha token'));
+                                return;
+                            }
+                            resolve(token);
+                        })
+                        .catch(reject);
+                });
+            }
+            waitApi();
         });
     }
 
