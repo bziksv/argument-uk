@@ -38,6 +38,7 @@
             waitApi();
         });
     }
+    window.argumentRecaptchaToken = argumentRecaptchaToken;
 
     $(document).on("click", "#ur_main_list", function() {
 		$('#fiz_list').hide();
