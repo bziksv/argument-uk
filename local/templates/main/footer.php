@@ -376,8 +376,8 @@ $filterPop["ID"] = $filter_pop;
 		<link href="<?=SITE_TEMPLATE_PATH?>/css/min.css" rel="stylesheet" />
 		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css" rel="stylesheet" />
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js"></script>
+		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js?v=5bdf4305"></script>
+		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js?v=5bdf4305"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
