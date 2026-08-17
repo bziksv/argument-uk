@@ -323,7 +323,7 @@ $filterPop["ID"] = $filter_pop;
 						<input type="tel" class="form-input" name="phone_f" placeholder="Телефон">
 					</div>
 					<div class="form-group">
-						<div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="6LeT4BUqAAAAAK7zGP0Dj43QOhykbxR4XcHB5cAG"></div>
+						<div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="<?= htmlspecialchars(argument_recaptcha_sitekey(), ENT_QUOTES) ?>"></div>
 					</div>
 					<div class="callback-form_policy">
 						<label class="wrapper-unified-checkbox">
@@ -362,7 +362,7 @@ $filterPop["ID"] = $filter_pop;
 						<input type="text" class="form-input" name="text_f" placeholder="Какой вопрос Вас интересует?">
 					</div>
 					<div class="form-group">
-						<div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="6LeT4BUqAAAAAK7zGP0Dj43QOhykbxR4XcHB5cAG"></div>
+						<div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="<?= htmlspecialchars(argument_recaptcha_sitekey(), ENT_QUOTES) ?>"></div>
 					</div>
 					<div class="callback-form_policy">
 						<label class="wrapper-unified-checkbox">
