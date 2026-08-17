@@ -1,0 +1,123 @@
+.news-detailed_img.wd_25 img{
+	    width: 25% !important;
+}
+.dropdown-menu_third-level {
+    min-height: 100%;
+}
+.dropdown-menu_third-level{
+	height: auto !important;
+}
+.dropdown-menu_second-level{
+	overflow: inherit  !important;
+}
+.dropdown-menu_third-level:before {
+    content: '';
+    background: #F5F5F5;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+#ur_main_list,#fiz_main_list{
+cursor:pointer;
+}
+#ur_main_list.act,#fiz_main_list.act{
+    position: relative;
+    color: #fff;
+    z-index: 1;
+}
+#ur_main_list.act:after {
+  content: '';
+  display: block;
+  width: 400%;
+  height: 100%;
+  background: #1565C0;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  -webkit-transform: skew(44deg);
+      -ms-transform: skew(44deg);
+          transform: skew(44deg);
+  z-index: -1;
+}
+
+#fiz_main_list.act:after {
+  content: '';
+  display: block;
+  width: 400%;
+  height: 100%;
+  background: #1565C0;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  -webkit-transform: skew(44deg);
+      -ms-transform: skew(44deg);
+          transform: skew(44deg);
+  z-index: -1;
+}
+
+.error input{
+	    border-color: red !important;
+}
+
+.main-slide form .main-form_policy .err_msg{
+	margin: 9px 0 0px 21px;
+}
+#callback .err_msg{
+	margin: -10px 0 15px 21px;
+}
+
+								.our-specialists_slider.slick-slider .slick-slide .desc_team{
+									opacity: 0;
+									display: none;
+								    position: relative;
+								    top: 100%;
+    left: -579px;
+    width: 1139px;
+
+								    padding-top: 2.8em;
+									-webkit-transition: opacity 1s ease 0s;
+									-ms-transition: opacity 1s ease 0s; 
+								    transition: opacity 1s ease 0s;
+								}
+								.our-specialists_slider.slick-slider  .slick-slide.slick-active.slick-center .desc_team{
+									display: block;
+									opacity: 1;
+								}
+								.our-specialists_slider.slick-slider .slick-prev {
+								    top: 110px !important;
+								}
+								.our-specialists_slider.slick-slider .slick-next {
+								    top: 110px !important;
+								}
+								@media (max-width: 1250px){
+									.our-specialists_slider.slick-slider .slick-slide .desc_team{
+									    left: -300px;
+									    width: 872px;
+									}
+								}
+								@media (max-width: 992px){
+									.our-specialists_slider.slick-slider .slick-slide .desc_team{
+									    left: -330px;
+									    width: 635px;
+									}
+								}
+								@media (max-width: 768px){
+									.our-specialists_slider.slick-slider .slick-slide .desc_team{
+									    left: -235px;
+									    width: 450px;
+									}
+								}
+								@media (max-width: 576px){
+									.our-specialists_slider.slick-slider .slick-slide .desc_team{
+									    left: 0px;
+									    width: 446px;
+									}
+								}
+.main-slide_title {
+    font-weight: 400;
+	text-transform: none;
+}

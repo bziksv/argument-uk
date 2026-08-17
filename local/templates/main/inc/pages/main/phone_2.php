@@ -1,0 +1,1 @@
+<a href="tel:+74732300049" class="head_phone-number">+7 (473) 230 00 49</a>

@@ -1,0 +1,1 @@
+<a href="tel:+74732300049" class="head_phone-number"><span class="main-head_icon glipf-call"></span>+7 (473) 230 00 49</a>

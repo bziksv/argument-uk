@@ -1,0 +1,177 @@
+<RequireAll>
+    Require all granted
+
+    Require not ip 49.13.193.0/24
+    Require not ip 5.139.230.0/24
+    Require not ip 5.139.253.0/24
+    Require not ip 31.181.248.0/24
+    Require not ip 37.18.38.0/24
+    Require not ip 37.77.111.0/24
+    Require not ip 45.140.18.0/24
+    Require not ip 62.183.46.0/24
+    Require not ip 77.110.108.0/24
+    Require not ip 83.239.97.0/24
+    Require not ip 85.172.109.0/24
+    Require not ip 85.174.205.0/24
+    Require not ip 85.175.197.0/24
+    Require not ip 85.175.217.0/24
+    Require not ip 91.233.43.0/24
+    Require not ip 95.153.163.0/24
+    Require not ip 95.153.177.0/24
+    Require not ip 95.153.178.0/24
+    Require not ip 95.153.180.0/24
+    Require not ip 95.25.184.0/24
+    Require not ip 178.176.211.0/24
+    Require not ip 185.10.173.0/24
+    Require not ip 188.162.140.0/24
+    Require not ip 188.162.143.0/24
+    Require not ip 188.170.169.0/24
+    Require not ip 217.78.231.0/24
+</RequireAll>
+
+
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  #php_flag default_charset UTF-8
+  php_value display_errors 1
+  php_value opcache.revalidate_freq 0
+  php_value max_input_vars 10000
+  php_value mbstring.func_overload 2
+</IfModule>
+
+<IfModule mod_php7.c>
+  php_flag session.use_trans_sid off
+  #php_flag default_charset UTF-8
+  php_value display_errors 1
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+# Убрать index.html index.php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.(html|php)?\ HTTP/
+RewriteRule ^(.*)index\.(html|php)?$ http://argument-uk.ru/$1 [R=301,L]
+
+#Без WWW
+RewriteCond %{HTTP_HOST} ^www.argument-uk.ru$ [NC]
+RewriteRule ^(.*)$ http://argument-uk.ru$1 [R=301,L]
+
+#Протокол HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} =off
+RewriteCond %{REQUEST_URI} !^/bitrix/admin/1c_exchange.php
+RewriteCond %{REQUEST_URI} !^/hand1CtoSite.php
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+#добавить слеш
+RewriteBase /
+RewriteRule (.*)\.html$ $1 [R=301,L]
+
+redirect 301 /articles/kak-perevesti-zhiloe-pomeshchenie-v-nezhiloe/ /information/kak-perevesti-zhiloe-pomeshchenie-v-nezhiloe/
+redirect 301 /articles/kak-oformit-dachu-v-sobstvennost/ /information/kak-oformit-dachu-v-sobstvennost/
+redirect 301 /articles/kak-pravilno-sostavit-brachnyy-kontrakt/ /information/kak-pravilno-sostavit-brachnyy-kontrakt/
+redirect 301 /articles/kogda-mozhno-ili-nelzya-izmenit-familiyu-rebyenka/ /information/kogda-mozhno-ili-nelzya-izmenit-familiyu-rebyenka/
+redirect 301 /articles/remont-besplatno/ /information/kakoy-remont-delaet-besplatno-upravlyayushchaya-kompaniya/
+redirect 301 /articles/prodat-ipotechnuyu-kvartiru/ /information/mozhno-li-prodat-ipotechnuyu-kvartiru-esli-ipoteka-za-nee-eshche-ne-vyplachena/
+redirect 301 /articles/chto-delat-esli-vo-dvore-potsarapali-vashu-mashinu/ /information/chto-delat-esli-vo-dvore-potsarapali-vashu-mashinu/
+redirect 301 /articles/bezvykhodnost-ili-moshennichestvo/ /information/bezvykhodnost-ili-moshennichestvo/
+redirect 301 /articles/instruktsiya-po-registratsii-filialov/ /information/poshagovaya-instruktsiya-po-registratsii-filialov/
+redirect 301 /articles/kak-platit-kredit/ /information/kak-platit-kredit/
+redirect 301 /articles/k-komu-mozhno-obratitsya-pri-dtp/ /information/k-komu-mozhno-obratitsya-pri-dtp/
+redirect 301 /articles/professionalnye-sovety-yurista/ /information/professionalnye-sovety-yurista/
+redirect 301 /articles/zashchita-pokupatelya/ /information/zashchita-pokupatelya/
+redirect 301 /articles/yuristy-v-delakh-semeynykh/ /information/yuristy-v-delakh-semeynykh/
+redirect 301 /articles/zachem-nuzhna-konsultatsiya-yurista-po-ugolovnym-delam/ /information/zachem-nuzhna-konsultatsiya-yurista-po-ugolovnym-delam/
+redirect 301 /articles/zhilishchnye-problemy-i-voprosy/ /information/zhilishchnye-problemy-i-voprosy/
+redirect 301 /articles/gde-vam-okazhut-pomoshch/ /information/gde-vam-okazhut-pomoshch/
+redirect 301 /articles/kak-kupit-nedvizhimost/ /information/kak-kupit-nedvizhimost/
+redirect 301 /articles/yuridicheskie-uslugi-ot-professionalov/ /information/yuridicheskie-uslugi-ot-professionalov/
+redirect 301 /articles/istina-v-vode/ /information/istina-v-vode/
+redirect 301 /articles/alternativa-privychnym-sudam/ /information/alternativa-privychnym-sudam/
+redirect 301 /articles/pravovoy-pomoshchnik/ /information/pravovoy-pomoshchnik/
+redirect 301 /articles/pochemu-stoit-obrashchatsya-k-nam/ /information/pochemu-stoit-obrashchatsya-k-nam/
+redirect 301 /articles/yuristy-dlya-yur-lits/ /information/yuristy-dlya-yur-lits/
+redirect 301 /articles/kak-razvestis-bez-soglasiya-supruga/ /information/kak-razvestis-bez-soglasiya-supruga/
+redirect 301 /articles/gramotnyy-yurist-zalog-uspekha/ /information/gramotnyy-yurist-zalog-uspekha/
+redirect 301 /articles/shtatnyy-sotrudnik-ili-pomoshch-iz-vne/ /information/shtatnyy-sotrudnik-ili-pomoshch-iz-vne/
+redirect 301 /articles/kak-pravilno-podoyti-k-protsedure-uvolneniya/ /information/kak-pravilno-podoyti-k-protsedure-uvolneniya/
+redirect 301 /articles/protsedura-oplaty-sverkhurochnogo-vremeni/ /information/protsedura-oplaty-sverkhurochnogo-vremeni/
+redirect 301 /articles/kak-oformit-sdelku-kupli-prodazhi-kvartiry/ /information/kak-oformit-sdelku-kupli-prodazhi-kvartiry/
+redirect 301 /articles/osobennosti-treteyskogo-sudeystva/ /information/osobennosti-i-preimushchestva-treteyskogo-sudeystva/
+redirect 301 /articles/kak-suditsya-po-dtp/ /information/kak-suditsya-po-dtp/
+redirect 301 /articles/kuda-obrashchatsya-s-zhaloboy-na-zhkkh/ /information/kuda-obrashchatsya-s-zhaloboy-na-zhkkh/
+redirect 301 /articles/ekspertiza-tovara-ili-kto-zhe-vse-taki-prav/ /information/ekspertiza-tovara-ili-kto-zhe-vse-taki-prav/
+redirect 301 /articles/o-pravakh-potrebiteley/ /information/o-pravakh-potrebiteley/
+redirect 301 /articles/istoki-treteyskogo-sudeystva/ /information/istoki-treteyskogo-sudeystva/
+redirect 301 /articles/ostorozhno-obnovka/ /information/ostorozhno-obnovka/
+redirect 301 /articles/dela-semeynye-ili-nikomu-krome-yurista/ /information/dela-semeynye-ili-nikomu-krome-yurista/
+redirect 301 /articles/vazhnost-yurista-v-nashey-zhizni/ /information/vazhnost-yurista-v-nashey-zhizni/
+redirect 301 /articles/ostorozhno-na-poroge-zaemshchiki/ /information/ostorozhno-na-poroge-zaemshchiki/
+redirect 301 /articles/podvel-zheleznyy-kon/ /information/podvel-zheleznyy-kon/
+redirect 301 /articles/stali-zhertvoy-vnezapnoy-proverki/ /information/stali-zhertvoy-vnezapnoy-proverki/
+redirect 301 /articles/zachem-nuzhen-kvalifitsirovannyy-yurist/ /information/zachem-nuzhen-kvalifitsirovannyy-yurist/
+redirect 301 /articles/kvalifitsirovannaya-yuridicheskaya-pomoshch/ /information/kvalifitsirovannaya-yuridicheskaya-pomoshch/
+redirect 301 /articles/kvadratnye-metry-pod-prismotrom-yurista/ /information/kvadratnye-metry-pod-prismotrom-yurista/
+redirect 301 /articles/vybiraem-pravilnogo-advokata/ /information/vybiraem-pravilnogo-advokata/
+redirect 301 /articles/sobiraetes-v-zags/ /information/sobiraetes-v-zags/
+redirect 301 /articles/zachem-nam-nuzhen-yurist/ /information/zachem-nam-nuzhen-yurist/
+redirect 301 /articles/pravovaya-strakhovka/ /information/pravovaya-strakhovka/
+redirect 301 /articles/krasen-li-dolg-platezhom/ /information/krasen-li-dolg-platezhom/
+redirect 301 /articles/pravovye-momenty-v-ipotechnom-kreditovanii/ /information/pravovye-momenty-v-ipotechnom-kreditovanii/
+redirect 301 /articles/lyubov-zla-ili-razvodimsya-s-inostrantsem/ /information/lyubov-zla-ili-razvodimsya-s-inostrantsem/
+redirect 301 /articles/chto-delat-pri-dtp/ /information/chto-delat-pri-dtp/
+redirect 301 /articles/chto-delat-pri-obnaruzhenii-oshibki-v-kvitantsii-zhkkh/ /information/chto-delat-pri-obnaruzhenii-oshibki-v-kvitantsii-zhkkh/
+redirect 301 /articles/pravila-razmena-zhilya-po-dogovoram-sotsialnogo-nayma/ /information/pravila-razmena-zhilya-po-dogovoram-sotsialnogo-nayma/
+redirect 301 /articles/semeynye-problemy-uladit-spetsialist/ /information/yuridicheskaya-konsultatsiya-vse-semeynye-problemy-uladit-spetsialist/
+redirect 301 /articles/vozmeshchenie-v-sluchayakh-zaliva/ /information/vozmeshchenie-vreda-v-sluchayakh-zaliva-kvartiry/
+redirect 301 /articles/otsrochka-vyplaty-kredita/ /information/otsrochka-vyplaty-kredita/
+redirect 301 /articles/razdel-zhilogo-pomeshcheniya/ /information/razdel-zhilogo-pomeshcheniya/
+redirect 301 /articles/chto-delat-esli-ugrozhayut-kollektory/ /information/chto-delat-esli-ugrozhayut-kollektory/
+redirect 301 /articles/usloviya-i-poryadok-vozvrata-deneg-za-tovary-nadlezhashchego-kachestva/ /information/usloviya-i-poryadok-vozvrata-deneg-za-tovary-nadlezhashchego-kachestva/
+redirect 301 /articles/lishenie-voditelskogo-udostovereniya-prichiny-obstoyatelstva-poryadok/ /information/lishenie-voditelskogo-udostovereniya-prichiny-obstoyatelstva-poryadok/
+redirect 301 /articles/priznanie-prava-sobstvennosti-na-zhiloe-pomeshchenie/ /information/priznanie-prava-sobstvennosti-na-zhiloe-pomeshchenie/
+redirect 301 /articles/ /information/
+redirect 301 /services/yuridicheskoe-soprovozhdenie-po-otdelnym-voprosam/ /information/yuridicheskoe-soprovozhdenie-po-otdelnym-voprosam/
+redirect 301 /services/yuridicheskoe-obsluzhivanie-yuridicheskikh-lits/ /information/yuridicheskoe-obsluzhivanie-yuridicheskikh-lits/
+redirect 301 /services/arbitrazhnyy-treteyskiy-sud/ /information/arbitrazhnyy-treteyskiy-sud/
+redirect 301 /tretejskij_sud/ /service/uslugi--treteyskogo-suda/
+redirect 301 /lichnyj_jurist/ /service/lichnyy--yurist/
+redirect 301 /discount/ /discount_system/
+redirect 301 /contacts/ /contact/
+redirect 301 /services/polnoe-yuridicheskoe-abonentskoe-soprovozhdenie-deyatelnosti/ /information/polnoe-yuridicheskoe-abonentskoe-soprovozhdenie-deyatelnosti/
+redirect 301 /services/nalogi/ /
+redirect 301 /press/ /
+redirect 301 /info/ /
+redirect 301 /news/ /
+redirect 301 /services/yuridicheskaya-pomoshch-pri-dtp/ /service/advokat-po-dtp/
+redirect 301 /services/konsultatsiya-yurista-po-semeynym-delam/ /service/advokat-po-semeynym-delam/
+redirect 301 /services/zashchita-prav-potrebiteley/ /service/zashchita-prav-potrebiteley/
+redirect 301 /services/konsultatsiya-yurista-po-ugolovnym-delam/ /service/advokat-po-ugolovnym-delam/
+redirect 301 /services/konsultatsiya-yurista-po-zhkkh/ /service/advokat-po-zhilishchnym-voprosam/
+
+
+
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>

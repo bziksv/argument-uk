@@ -1,0 +1,2 @@
+<a target="_blank" href="http://argument-uk.ru/upload/politics-argument-uk.pdf">Политика конфиденциальности.</a> <br><a target="_blank" href="http://argument-uk.ru/upload/cookies-argument-uk.pdf">Политика использования<br>
+ cookie-файлов.</a>

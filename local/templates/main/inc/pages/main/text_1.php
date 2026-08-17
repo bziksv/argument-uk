@@ -1,0 +1,1 @@
+Argumenta ponderantur, <span class="min">non numerantur!</span> 

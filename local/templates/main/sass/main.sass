@@ -1,0 +1,2409 @@
+@charset "UTF-8"
+html
+	min-height: 100vh
+	&.is-hidden
+		overflow: hidden
+body
+	background: #fff
+	font-family:  'roboto', Arial, Verdana, Tahoma, sans-serif
+	font-size: 16px
+	line-height: 1.25
+	color: #333333
+	opacity: 1
+	min-height: 100vh
+
+
+.global-wrapper
+	min-width: 320px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+
+ol, ul
+	list-style: none
+	margin-bottom: 0
+
+input
+	background: none
+	border: 0
+	margin: 0
+	padding: 0
+	outline: none !important
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+p
+	font-size: .875rem
+	line-height: 1.3
+	margin-bottom: 1.2em
+
+a
+	text-decoration: none
+	&:hover
+		color: inherit
+
+\::-webkit-contacts-auto-fill-button
+	visibility: hidden
+	pointer-events: none
+	position: absolute
+	right: 0
+
+body a
+	&:hover, &:active, &:focus
+		text-decoration: none
+		outline: 0
+
+input:focus
+	border: none
+	outline: none
+
+button
+	-webkit-appearance: button
+	cursor: pointer
+	&:focus
+		outline: none
+
+input:-webkit-autofill,textarea:-webkit-autofill, select:-webkit-autofill
+	background-color: transparent !important
+
+html input[type="button"]
+	-webkit-appearance: button
+	cursor: pointer
+
+input
+	font-family: inherit
+	font-size: inherit
+	line-height: inherit
+	&[type="reset"], &[type="submit"]
+		-webkit-appearance: button
+		cursor: pointer
+	&[type="hidden"]
+		display: none
+
+button, select, textarea
+	font-family: inherit
+	font-size: inherit
+	line-height: inherit
+
+h1
+	font-size: 1.875rem
+	font-weight: 300
+	margin: 0 0 1.4em
+	position: relative
+	text-align: center
+	text-transform: uppercase
+	strong
+		font-weight: 900
+		color: #1565C0
+h2
+	font-size: 1.875rem
+	font-weight: 300
+	margin: 0 0 1.4em
+	position: relative
+	text-align: center
+	text-transform: uppercase
+	strong
+		font-weight: 900
+		color: #1565C0
+.section-title
+	font-size: 1.875rem
+	font-weight: 300
+	margin: 0 0 1.4em
+	padding-top: 2.8em
+	position: relative
+	text-align: center
+	text-transform: uppercase
+	strong
+		font-weight: 900
+		color: #1565C0
+	&:before
+		content: ''
+		display: block
+		width: 653px
+		height: 44px
+		background: url(../img/bg/title-bg.png) no-repeat center top
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		margin: auto
+
+h4
+	font-size: 1.25rem
+	font-weight: 500
+	margin: 0 0 .7em
+.text-center
+	text-align: center
+.white-title
+	color: #fff
+.title-left
+	text-align: left
+
+.min
+	display: block
+
+.col-mod-left
+	padding-left: 0
+
+.col-mod-right
+	padding-right: 0
+
+
+ul:not([class])
+	margin: 0 0 .5em
+	li
+		margin-bottom: .5em
+		padding-left: 10px
+		position: relative
+		&:before
+			content: ''
+			display: block
+			display: inline-block
+			width: 3px
+			height: 3px
+			border-radius: 50%
+			background-color: #000
+			position: absolute
+			top: 8px
+			left: 0
+			transition: background .3s
+		&:last-child
+			margin-bottom: 0
+
+.wrapper-loader
+	background: #81D4FA
+	z-index: 10000
+
+.main-btn
+	display: inline-block
+	height: 42px
+	background-color: #1565c0
+	border-radius: 21px
+	padding: 0 1.5em
+	color: #fff
+	font-weight: 800
+	line-height: 42px
+	text-align: center
+	transition: background .3s
+	text-transform: uppercase
+	&:hover
+		color: #fff
+		background: darken(#1565c0, 10%)
+	&:active
+		border-top: 1px solid  darken(#1565c0, 30%)
+		box-shadow: inset 1px 2px  darken(#1565c0, 30%)
+	&.gray-btn
+		background: #E1E1E1
+		color: #333333
+		&:hover
+			color: #333333
+			background: darken(#E1E1E1, 10%)
+		&:active
+			border-top: 1px solid  darken(#E1E1E1, 30%)
+			box-shadow: inset 1px 2px  darken(#E1E1E1, 30%)
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+	::i-block-chrome,.row
+		display: block
+	::i-block-chrome,.row:after
+		content: ''
+		display: table
+		height: 0
+		clear: both
+
+@media (min-resolution: 0.001dpcm)
+	_:-o-prefocus, body
+		.row
+			display: block
+			&:after
+				content: ''
+				display: table
+				height: 0
+				clear: both
+[class^="col-"]
+	float: left
+
+@media all and (min-width:0\0) and (min-resolution:.001dpcm)
+	.row
+		&:after
+			content: ''
+			display: table
+			height: 0
+			clear: both
+
+@font-face
+	font-family: 'roboto'
+	src: url('../fonts/robotoregular/roboto-regular-webfont.woff2') format("woff2"), url('../fonts/robotoregular/roboto-regular-webfont.woff') format("woff")
+	font-weight: normal
+	font-style: normal
+
+@font-face
+	font-family: 'roboto'
+	src: url('../fonts/robotolight/roboto-light-webfont.woff2') format("woff2"), url('../fonts/robotolight/roboto-light-webfont.woff') format("woff")
+	font-weight: 300
+	font-style: normal
+
+@font-face
+	font-family: 'roboto'
+	src: url('../fonts/robotomedium/roboto-medium-webfont.woff2') format("woff2"), url('../fonts/robotomedium/roboto-medium-webfont.woff') format("woff")
+	font-weight: 600
+	font-style: normal
+
+@font-face
+	font-family: 'roboto'
+	src: url('../fonts/robotobold/roboto-bold-webfont.woff2') format("woff2"), url('../fonts/robotobold/roboto-bold-webfont.woff') format("woff")
+	font-weight: 800
+	font-style: normal
+
+@font-face
+	font-family: 'roboto'
+	src: url('../fonts/robotoblack/3953-webfont.woff2') format("woff2"), url('../fonts/robotoblack/3953-webfont.woff') format("woff")
+	font-weight: 900
+	font-style: normal
+
+@font-face
+	font-family: 'glipf-icon'
+	src: url('../fonts/icons/glipf-icon.eot?5am02o')
+	src: url('../fonts/icons/glipf-icon.eot?5am02o#iefix') format("embedded-opentype"), url('../fonts/icons/glipf-icon.ttf?5am02o') format("truetype"), url('../fonts/icons/glipf-icon.woff?5am02o') format("woff"), url('../fonts/icons/glipf-icon.svg?5am02o#glipf-icon') format("svg")
+	font-weight: normal
+	font-style: normal
+
+[class^="glipf-"], [class*=" glipf-"]
+	font-family: 'glipf-icon' !important
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.glipf-balance
+	.path1:before
+		content: "\e900"
+		color: rgb(206, 214, 224)
+	.path2:before
+		content: "\e901"
+		margin-left: -1em
+		color: rgb(21, 101, 192)
+	.path3:before
+		content: "\e902"
+		margin-left: -1em
+		color: rgb(129, 212, 250)
+	.path4:before
+		content: "\e903"
+		margin-left: -1em
+		color: rgb(206, 214, 224)
+
+.glipf-call:before
+	content: "\e904"
+
+.glipf-court:before
+	content: "\e905"
+
+.glipf-email:before
+	content: "\e906"
+
+.glipf-home:before
+	content: "\e907"
+
+.glipf-insurance-1:before
+	content: "\e908"
+
+.glipf-insurance:before
+	content: "\e909"
+
+.glipf-left-arrow:before
+	content: "\e90a"
+
+.glipf-logo-prime
+	.path1:before
+		content: "\e90b"
+		color: rgb(0, 0, 0)
+	.path2:before
+		content: "\e90c"
+		margin-left: -1em
+		color: rgb(0, 0, 0)
+	.path3:before
+		content: "\e90d"
+		margin-left: -1em
+		color: rgb(0, 0, 0)
+	.path4:before
+		content: "\e90e"
+		margin-left: -1em
+		color: rgb(0, 0, 0)
+	.path5:before
+		content: "\e90f"
+		margin-left: -1em
+		color: rgb(40, 40, 40)
+
+.glipf-manager:before
+	content: "\e910"
+
+.glipf-rank:before
+	content: "\e911"
+
+.glipf-right-arrow:before
+	content: "\e912"
+
+.glipf-suitcase:before
+	content: "\e913"
+
+
+/*****HEADER*****/
+.main-head
+	background: #fff
+	padding: 1.5em 0
+	&.is-overflow
+		overflow-y: scroll
+.fixed-menu
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	transform: translate3d(0, -100px ,0)
+	z-index: 100
+	&.is-overflow
+		padding-right: 17px
+	.scroll-hidden_block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 33%
+	.hamburger-and-menu
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		margin-right: .5em
+	.container
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+	.head-nav
+		width: 60%
+		margin-right: 2em
+	.menu-item_scroll-hidden
+		display: none
+	.dropdown-menu_second-level
+		max-height: calc(100vh - 110px)
+.global-pad
+	padding-top: 62px
+.hamburger-and-menu
+	display: none
+	position: relative
+	align-items: center
+	height: 62px
+.head-menu_hidden
+	display: none
+	position: absolute
+	top: 100%
+	left: 0
+	min-width: 243px
+	background-color: white
+	box-shadow: 0 3px 10px rgba(0, 0, 1, 0.05)
+	li
+		border-bottom: 1px solid #EAEAEA
+		&:last-child
+			border-bottom: none
+	a
+		display: block
+		padding: 1em .7em
+		color: inherit
+		font-weight: 500
+		transition: color .3s
+		&:hover
+			color: #1665c1
+.scroll-transform
+	transform: translate3d(0, 0 ,0)!important
+	transition: transform .4s
+.head-logo
+	img
+		max-width: 100%
+.head_company-motto
+	position: relative
+	padding-bottom: 2.4em
+.company-motto_top-text
+	display: block
+	font-size: 1.5rem
+	line-height: 1.2
+	font-style: italic
+	font-weight: 300
+	letter-spacing: -1px
+	position: relative
+	&:after
+		content: ''
+		display: block
+		width: 110px
+		height: 10px
+		background-color: #81d4fa
+		position: absolute
+		bottom: 10px
+		right: 0
+		transform: skew(30deg)
+
+.company-motto_bottom-text
+	display: block
+	position: absolute
+	bottom: 0
+	right: 0
+	width: 100%
+	font-size: .875rem
+	line-height: 1.25
+	text-align: right
+	&:before
+		content: ''
+		display: block
+		width: 110px
+		height: 10px
+		background-color: #1565c0
+		position: absolute
+		top: 0
+		left: 0
+		transform: skew(30deg)
+.main-head_icon
+	color: #1565C0
+	margin-right: .5em
+	font-size: 1.5rem
+.head-adress
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	font-size: 1.25rem
+	margin-bottom: .6em
+	small
+		font-size: .875rem
+		display: block
+		margin-bottom: 3px
+.head_phone-number
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	font-size: 1.25rem
+	margin-bottom: 1.3em
+	color: inherit
+	transition: color .3s
+	&:hover
+		color: #1565C0
+
+.head_bottom-panel
+	background: #81D4FA
+.scroll-hidden_block
+	display: none
+	height: 62px
+	position: relative
+	z-index: 1
+	&:after
+		content: ''
+		display: block
+		width: 400%
+		height: 100%
+		position: absolute
+		background: #fff
+		top: 0
+		left: -1em
+		transform: skew(-45deg)
+		z-index: -1
+	li
+		padding: 0 .5em
+	a
+		color: inherit
+	.head_phone-number
+		margin-bottom: 0
+.callback-btn
+	color: #fff!important
+	padding: 0 .8em
+.head-menu
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+.head-menu_item
+	display: inline-block
+	font-weight: 800
+	position: relative
+	text-transform: uppercase
+	&.active
+		color: #fff
+		background: #1565C0
+		>a
+			background: #1565C0
+	>a
+		display: block
+		padding: 1.3em .5em
+		color: inherit
+		transition: background .3s
+@media only screen and (min-width: 1024px)
+	.head-menu_item
+		>a
+			&:hover
+				background: #1565C0
+				color: #fff
+.dropdown-content
+	position: absolute
+	left: 0
+	top: 100%
+	width: 895px
+	visibility: hidden
+	max-height: 100vh
+	background: #fff
+	transform: translate(0, 20px)
+	opacity: 0
+	transition: visibility .25s,opacity .25s, transform .25s
+	z-index: 50
+	&.is-active
+		visibility: visible
+		opacity: 1
+		transform: translate(0,0)
+
+.dropdown-menu
+	display: table
+	background: #1565C0
+	width: 100%
+	text-transform: none
+.dropdown-menu_item
+	display: table-cell
+	color: #fff
+	font-weight: 600
+	background: #1565C0
+	>a
+		display: block
+		position: relative
+		padding: 1.3em 1em
+		color: inherit
+		text-transform: none
+		&:before
+			content: ''
+			display: block
+			height: 70%
+			width: 1px
+			background: #4C88CC
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			margin: auto
+		&:after
+			content: ''
+			display: block
+			width: 100%
+			height: 12px
+			background: #1565C0
+			clip-path: polygon(100% 0, 0 0, 48% 100%)
+			position: absolute
+			top: 99%
+			left: 0
+			opacity: 0
+			transition: opacity .3s
+			z-index: 55
+		&.is-active
+			&:after
+				opacity: 1
+
+
+.dropdown-menu_second-level
+	display: none
+	background: #F5F5F5
+	position: absolute
+	top: 100%
+	left: 0
+	padding: 1.1em 2em
+	width: 100%
+	overflow: auto
+	&.is-active
+		display: block
+	>li
+		width: 50%
+	li
+		font-size: 0.8125rem
+		line-height: 1.25
+		margin-bottom: -4px
+		&.dropdown-menu_title
+			font-weight: 600
+			font-size: 1rem
+			padding: 0
+			color: #1565c0
+			margin-bottom: .4em
+	a
+		display: block
+		padding: .5em 1em .5em 0
+		color: #333333
+		cursor: pointer
+		transition: color .3s
+		&:hover
+			color: #1565c0
+.dropdown-menu_third-level
+	display: none
+	position: absolute
+	right: 0
+	top: 0
+	background: #fff
+	color: #333333
+	padding: 1.3em 2em
+	width: 50%
+	height: 100%
+	&.is-active
+		display: block
+	a
+		display: block
+		padding: .5em 0
+		color: inherit
+		// padding: 0
+		transition: color .3s
+		&:hover
+			color: #1565c0
+@media only screen and (min-width: 1024px)
+	.head-menu_item
+		&:hover
+			.dropdown-content
+				opacity: 1
+				visibility: visible
+				transform: translate(0,0)
+	.dropdown-menu_item
+		&:hover
+			.dropdown-menu_second-level
+				display: block
+	.dropdown-menu_second-level li
+		&:hover
+			.dropdown-menu_third-level
+				display: block
+.main-head
+	.main-btn
+		width: 100%
+.hamburger
+	padding: 0
+	&.is-active
+		.hamburger-inner
+			background: #333333
+			&:after,&:before
+				background: #333333
+.hamburger-box
+	display: block
+	width: 30px
+	height: 23px
+.hamburger-inner
+	background: #333333
+	&:after,&:before
+		background: #333333
+.hamburger.is-active:hover, .hamburger:hover
+	opacity: 1
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+	width: 100%
+	height: 3px
+
+.main-content
+	flex: 1 0 auto
+/**main-slider**/
+.main-slider.slick-slider
+	margin-bottom: 0
+.main-slide_content
+	min-height: 550px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	flex-direction: column
+	justify-content: center
+	padding: 2em 0
+	background-repeat: no-repeat
+	background-position: center  top
+	background-size: cover
+.main-form_title
+	font-size: 1.5rem
+	font-weight: 600
+	margin-bottom: 1em
+	text-transform: uppercase
+.main-form_group
+	margin-bottom: 1.5em
+.main-form_input
+	height: 42px
+	width: 100%
+	background: #fff
+	border-radius: 21px
+	padding: 0 1em
+	border: 1px solid transparent
+	transition: border .3s
+	&:focus
+		border: 1px solid #1565C0
+	&::-webkit-input-placeholder
+		color: rgba(51,51,51,.4)
+	&::-moz-placeholder
+		color: rgba(51,51,51,.4)
+	&::-ms-input-placeholder
+		color: rgba(51,51,51,.4)
+	&::input-placeholder
+		color: rgba(51,51,51,.4)
+.wrapper-unified-checkbox
+	display: inline-block
+	position: relative
+	cursor: pointer
+	font-weight: 400
+	margin-bottom: 0
+	padding-left: 20px
+	// min-height: 20px
+	input[type="checkbox"]
+		position: absolute
+		margin-left: -20px
+		display: none
+		&:checked + .checkbox-text:before
+			border-radius: 50%
+			width: 8px
+			height: 8px
+			background-color: #1565c0
+			content: ''
+			display: block
+			position: absolute
+			top: 5px
+			left: 3px
+			z-index: 1
+		+ .checkbox-text:after
+			content: ""
+			display: block
+			width: 14px
+			height: 14px
+			background-color: white
+			border-radius: 50%
+			position: absolute
+			top: 2px
+			left: 0
+		+ .checkbox-text_mod:after
+				border: 1px solid rgba(0, 0, 0, 0.1)
+	.checkbox-text
+		font-size: .875rem
+		display: inline-block
+	a
+		color: #1565c0
+		border-bottom: 1px solid #1565c0
+		transition: border-bottom-color .3s
+		&:hover
+			border-bottom-color: transparent
+.main-form_submit
+	margin-top: 1.2em
+	width: 100%
+.slick-dots
+	padding: 0
+	bottom: 2em
+	text-align: center
+	li
+		background-color: #e1e1e1
+		width: 15px
+		height: 15px
+		border: none
+		&.slick-active
+			background: #1565C0
+.slick-prev,.slick-next
+	width: 42px
+	height: 42px
+	border-radius: 50%
+	background-color: #e1e1e1
+	border: none
+	transform: none
+	transition: background .3s
+	&:hover
+		background: #1565C0
+		&:after
+			border-color: #fff
+	&:after
+		content: ''
+		display: block
+		width: 35%
+		height: 35%
+		border-top: 3px solid #333333
+		border-right: 3px solid #333333
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		transform: rotate(45deg)
+		transition: border-color .3s
+.main-slide_title
+	font-size: 3.75rem
+	color: #fff
+	margin-bottom: .6em
+	text-align: left
+	strong
+		font-weight: 900
+		color: #fff
+.slick-prev
+	&:after
+		left: 5px
+		// right: auto
+		transform: rotate(225deg)
+.slick-next
+	&:after
+		right: 5px
+.main-slider
+	.slick-prev,.slick-next
+		left: 50%
+		bottom: 5%
+		transform: translate(-50%, 0)
+		top: auto
+	.slick-prev
+		transform: translate(-600px, 0)
+	.slick-next
+		transform: translate(-550px, 0)
+/**services-section***/
+.services-section
+	overflow: hidden
+.services-section_body
+	padding-top: 2.6em
+	padding-bottom: 2.8em
+.services-section_top-panel
+	background: #81D4FA
+	// overflow: hidden
+.services-section_title
+	font-size: 1.375rem
+	padding: 1em 0
+	font-weight: 800
+	text-transform: uppercase
+	text-align: center
+.services-section_title-second
+	position: relative
+	color: #fff
+	z-index: 1
+	&:after
+		content: ''
+		display: block
+		width: 400%
+		height: 100%
+		background: #1565C0
+		position: absolute
+		top: 0
+		left: -10px
+		transform: skew(44deg)
+		z-index: -1
+.service-item
+	padding: 0 0 1.7em
+	margin-bottom: 1.5em
+	border-bottom: 2px solid #81d4fa
+	&:last-child
+		border-bottom: none
+		margin-bottom: 0
+	p
+		margin-bottom: .7em
+.service-item_title
+	font-size: 1.25rem
+	font-weight: 600
+	margin: 0 0 .6em 0
+.service-item_more-link
+	text-align: right
+	a
+		font-size: .875rem
+		font-weight: 800
+		color: #a1a1a1
+		border-bottom: 1px solid #a1a1a1
+		text-transform: uppercase
+		transition: border-bottom-color .3s, color .3s
+		&:hover
+			border-bottom-color: #1565C0
+			color: #1565C0
+.service-more-btn
+	position: relative
+	margin-top: 0em
+	text-align: center
+	&:after,&:before
+		content: ''
+		display: block
+		position: absolute
+		width: 169px
+		height: 10px
+		top: 0
+		bottom: 0
+		margin: auto
+		background-size: contain
+	&:after
+		background: url(../img/bg/line-left.png)
+		left: 0
+	&:before
+		background: url(../img/bg/line-right.png)
+		right: 0
+	a
+		color: #1565c0
+		// border-bottom: 1px solid #1565c0
+		font-weight: 800
+		text-transform: uppercase
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+.services-section_footer
+	// overflow: hidden
+	.container-fluid
+		padding: 0
+.services-section_footer-column
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	padding: 2em 30px 1em
+	min-height: 300px
+	p
+		font-size: 1.5rem
+.services-section_footer-column_first
+	background: url(../img/bg/services/01.jpg) no-repeat center top
+	background-size: cover
+	padding-right: 7.2em
+	justify-content: flex-end
+	.services-section_footer-content
+		text-align: right
+.services-section_footer-column_second
+	padding-left: 5.5em
+	background: url(../img/bg/services/02.jpg) no-repeat center top
+	background-size: cover
+.services-section_footer-number
+	font-size: 3.75rem
+	line-height: 1
+	font-weight: 900
+	margin-bottom: 5px
+.benefits-section
+	padding: 3.2em 0
+.benefit-item
+	border: 4px solid #81d4fa
+	padding: 1.5em 1em
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: center
+	height: 100%
+	text-align: center
+	p
+		font-size: .875rem
+		line-height: 1.2
+		margin-bottom: .2em
+		width: 100%
+.benefit-item_header
+	padding: .25em .2em .15em
+	font-size: 2.25rem
+	color: #fff
+	font-weight: 900
+	margin: 0 0 .35em
+	position: relative
+	width: 100%
+	text-transform: uppercase
+	text-align: center
+	z-index: 1
+	&:before
+		content: ''
+		display: block
+		height: 10px
+		background-color: #81d4fa
+		transform: skew(30deg)
+		position: absolute
+		top: 0
+		bottom: 0
+		left: -15px
+		margin: auto
+		width: calc(100% + 30px)
+		z-index: -2
+	&:after
+		content: ''
+		display: block
+		width: 89%
+		height: 100%
+		background: #1565C0
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		margin: auto
+		transform: skew(45deg)
+		z-index: -1
+.benefit-item_header-number
+	font-size: 3.75rem
+	padding: .1em 0
+	line-height: .8
+.benefit-item_title
+	font-size: 1.25rem
+	font-weight: 500
+	margin: 0 0 .1em 0
+	width: 100%
+	text-transform: uppercase
+.gray-section
+	background: #F5F5F5
+.about-us_section
+	padding: 3.2em 0
+	p
+		font-size: 1rem
+		&:last-child
+			margin-bottom: 0
+	strong
+		font-weight: 700
+		text-transform: uppercase
+	ul
+		margin-top: -1em
+/**popular-services_section***/
+.popular-services_section
+	padding: 3.2em 0
+.popular-services_item
+	border: 4px solid #81d4fa
+	padding: .5em 1em .9em
+	height: 100%
+	text-align: center
+	p
+		margin-bottom: 1em
+.service-column
+	margin-bottom: 2em
+.popular-services_item-link
+	font-size: .875rem
+	font-weight: 800
+	color: #a1a1a1
+	border-bottom: 1px solid #a1a1a1
+	text-transform: uppercase
+	transition: border-bottom-color .3s, color .3s
+	&:hover
+		border-bottom-color: #1565C0
+		color: #1565C0
+.popular-services_item-icon
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: flex-start
+	margin: 0 auto .9em
+	color: #3178C8
+	height: 70px
+	&:before
+		font-size: 4rem
+	&.glipf-insurance-1
+		margin-top: .5em
+		margin-bottom: .6em
+		&:before
+			font-size: 4.4rem
+	&.glipf-rank
+		margin-top: -5px
+		margin-bottom: 1.2em
+		&:before
+			font-size: 6rem
+.popular-services_item-title
+	font-size: 1.25rem
+	font-weight: 500
+	margin: 0 0 .6em 0
+.all-services_conpany-link
+	display: block
+	max-width: 278px
+	margin: 1em auto 0
+/***our-team_section**/
+.our-team_section
+	padding: 3.2em 0 1.5em
+.our-team_item
+	position: relative
+	margin-bottom: 3.5em
+	img
+		display: block
+		width: 100%
+		height: auto
+.our-team-name
+	font-size: 1.25rem
+	font-weight: 500
+	color: #fff
+	text-align: center
+	text-transform: uppercase
+.our-team_position
+	display: block
+	font-size: 1rem
+	text-transform: none
+	z-index: 1
+.our-team-name
+	position: absolute
+	padding: .4em 0
+	bottom: -29px
+	left: 0
+	width: 100%
+	z-index: 1
+	&:before
+		content: ''
+		display: block
+		height: 10px
+		background-color: #81d4fa
+		transform: skew(30deg)
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		width: 97%
+		z-index: -2
+	&:after
+		content: ''
+		display: block
+		width: 75%
+		height: 100%
+		background: #1565C0
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		margin: auto
+		transform: skew(45deg)
+		z-index: -1
+/***map-container**/
+.map-container
+	height: 400px
+	position: relative
+#map
+	height: 100%
+.map-contact
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 50%
+	width: 380px
+	height: 100%
+	background: #FBFDF9
+	padding: 4em 2em 2em
+	transform: translate(220px, 0)
+	z-index: 20
+.map-contact_logo
+	margin-bottom: 2em
+	img
+		max-width: 100%
+.map-contact_list
+	margin-bottom: 2.3em
+	li
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		font-size: 1.25rem
+		margin-bottom: 1em
+		&:last-child
+			margin-bottom: 0
+	small
+		font-size: .875rem
+		display: block
+	a
+		color: inherit
+.map-contact_btn
+	color: #fff!important
+	max-width: 278px
+	width: 100%
+.map-contact_icon
+	color: #1565C0
+	font-size: 1.5rem
+	margin-right: 10px
+.breadcrumbs
+	border-bottom: 2px solid #fff
+	padding: 1em 0
+	margin-bottom: 2.3em
+	li
+		display: inline-block
+		font-size: .875rem
+		position: relative
+		margin-bottom: 7px
+		margin-right: 10px
+		&:after
+			content: ''
+			display: block
+			width: 4px
+			height: 1px
+			background: #333333
+			position: absolute
+			top: 0
+			bottom: 0
+			right: -6px
+			margin: auto
+		&:last-child
+			margin-right: 0
+			display: inline
+			border-bottom: 1px solid #9B9B9B
+			&:after
+				display: none
+	a
+		color: inherit
+		border-bottom: 1px solid transparent
+		transition: color .3s, border-bottom-color .3s
+		&:hover
+			color: #1565C0
+			border-bottom-color: #1565C0
+/**our-sevices_section***/
+.our-sevices_section
+	padding-bottom: 3em
+.our-sevices_menu
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	border-bottom: 2px solid #1565C0
+	li
+		flex-grow: 1
+		margin: 0 1.5px
+		padding: .75em 1em
+		background: #E1E1E1
+		font-weight: 800
+		text-transform: uppercase
+		text-align: center
+		transition: background .3s, color .3s
+		&:hover
+			background: #1565C0
+			color: #fff
+		&.active
+			color: #fff
+			background: #1565C0
+.our-sevices_img
+	margin-bottom: .5em
+	img
+		width: 100%
+.our-sevices_item
+	padding: .8em 0 .9em
+	border-bottom: 2px solid #81D4FA
+	&:last-child
+		border-bottom: none
+	p
+		&:last-child
+			margin-bottom: 0
+.our-sevices_item-title
+	margin: 0 0 .6em 0
+	font-size: 1.25rem
+	font-weight: 500
+	a
+		color: inherit
+		border-bottom: 1px solid transparent
+		transition: color .3s, border-bottom-color .3s
+		&:hover
+			color: #1565c0
+			border-bottom-color: #1565c0
+.tab
+	cursor: pointer
+.tab-item
+	height: 0
+	overflow: hidden
+	opacity: 0
+	transition: opacity .3s
+	&.is-visible
+		height: auto
+		overflow: visible
+		opacity: 1
+.main-slider_inner
+	.main-slide_content
+		min-height: 410px
+.sidebar-menu
+	margin-bottom: 3em
+.sidebar-menu_item
+	margin-bottom: .6em
+	&.active
+		>a
+			background: #1565C0
+			color: #fff
+	>a
+		display: block
+		padding: .7em 1.3em
+		background: #E1E1E1
+		color: inherit
+		font-weight: 800
+		text-transform: uppercase
+		transition: background .3s, color .3s
+		&:hover
+			background: #1565C0
+			color: #fff
+.sidebar-menu_dropdown
+	background: #fff
+	display: none
+	a
+		display: block
+		padding: .7em 1.3em
+		line-height: 1.2
+		color: #333333
+		color: inherit
+		transition: color .3s
+		&:hover
+			color: #1565C0
+.sidebar-banner
+	position: relative
+	margin-bottom: 3em
+	img
+		display: block
+		width: 100%
+	p
+		font-size: 1.5rem
+.sidebar-banner_title
+	display: block
+	font-size: 1.875rem
+	line-height: 1.1
+	font-weight: 700
+	margin-bottom: .7em
+	text-transform: uppercase
+.sidebar-banner_btn
+	max-width: 178px
+	padding: 0 1em
+	width: 100%
+.sidebar-banner_content
+	position: absolute
+	width: 100%
+	top: 1.5em
+	padding: 0 1.5em
+.sidebar-banner_number
+	display: block
+	font-size: 3.75rem
+	font-weight: 900
+/**services-detailed***/
+.services-detailed_img
+	img
+		width: 100%
+
+.services-detailed
+	p
+		margin-bottom: 1em
+	ul
+		li
+			font-size: .875rem
+	h4
+		font-size: 1.25em
+		font-weight: 500
+		margin: 2em 0 1em 0
+.services-detailed_footer
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	.main-btn
+		max-width: 276px
+		padding-left: .6em
+		padding-right: .6em
+		width: 100%
+/**our-specialists_section**/
+.our-specialists_section
+	padding: 0 0 2em
+	h3
+		font-size: 1.875rem
+		font-weight: 400
+		margin: 0 0 .5em 0
+		text-transform: uppercase
+	p
+		margin-bottom: 1.3em
+	h4
+		font-size: 1.25rem
+		font-weight: 500
+		margin: 0 0 1.3em
+.our-specialists_item-img
+	img
+		width: 100%
+.our-specialists_item-name
+	padding: .5em
+	background: #1565C0
+	font-size: 1.25rem
+	font-weight: 500
+	color: #fff
+	text-align: center
+	text-transform: uppercase
+.our-specialists_item-post
+	display: block
+	font-size: 1rem
+	font-weight: 400
+	text-transform: none
+.our-specialists_slider.slick-slider
+	margin-bottom: 2.8em
+	padding: 0 1.5em
+	.slick-next
+		right: 0
+		top: 35%
+	.slick-prev
+		left: 0
+		top: 35%
+	.slick-slide
+		position: relative
+		padding: 0 .5em
+	.slick-current.slick-active
+		.our-specialists_item
+			&:after
+				opacity: 0
+			// z-index: -1
+.our-specialists_item
+	position: relative
+	&:after
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		background: #fff
+		opacity: .7
+		position: absolute
+		top: 0
+		left: 0
+		transition: opacity .3s
+/***news-section**/
+.news-section
+	padding: 0 0 3.2em
+.news-item_img
+	margin-bottom: 1em
+	a
+		display: block
+		height: 100%
+	img
+		display: block
+		width: 100%
+.news-column
+	margin-bottom: 1.6em
+.news-item
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 100%
+	p
+		margin-top: 1em
+		margin-bottom: auto
+.news-item_title
+	font-size: 1.25rem
+	line-height: 1.2
+	font-weight: 500
+.news-item_body
+	margin-bottom: auto
+.news-item_footer
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	font-size: .875rem
+	margin-top: .5em
+	color: #a1a1a1
+.news-item_more-link
+	font-size: .875rem
+	font-weight: 800
+	color: inherit
+	border-bottom: 1px solid #a1a1a1
+	text-transform: uppercase
+	transition: border-bottom-color .3s, color .3s
+	&:hover
+		border-bottom-color: #1565C0
+		color: #1565C0
+.main-pagination
+	margin-top: 1.7em
+	text-align: right
+	li
+		display: inline-block
+		padding: 0 .2em
+		&:last-child
+			padding-right: 0
+		&.active
+			a
+				background: #1565C0
+				color: #fff
+	a
+		display: block
+		width: 42px
+		height: 42px
+		font-size: 1.25rem
+		font-weight: 500
+		color: inherit
+		line-height: 42px
+		background-color: #e1e1e1
+		border-radius: 50%
+		text-align: center
+		transition: background .3s, color .3s
+		&:hover
+			background: #1565C0
+			color: #fff
+/***news-detailed**/
+.news-detailed
+	h4
+		font-size: 1.25rem
+		font-weight: 500
+		margin: 0.8em 0 .7em
+	p
+		// margin-top: -3px
+		margin-bottom: .7em
+.list-mod
+	// margin-top: -6px
+	margin-bottom: 1em
+	li
+		font-size: .875rem
+		margin-bottom: .5em
+.news-detailed_img
+	margin: 0
+	margin-bottom: 1em
+	img
+		display: block
+		width: 100%
+.news-detailed_date
+	font-size: .875rem
+	color: #b8b8b8
+	margin-bottom: 3.3em
+.text-right
+	text-align: right
+.all-news_btn
+	margin-top: 2em
+	max-width: 278px
+	width: 100%
+/***contact-section***/
+.contact-section
+	padding-bottom: 3.2em
+	p
+		margin-bottom: .8em
+	h4
+		margin-bottom: .5em
+.documents_tab-names
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	border-bottom: 3px solid #1565C0
+	margin-bottom: .5em
+	li
+		display: inline-block
+		max-width: 230px
+		width: 100%
+		margin: 0  3px 0 0
+		padding: .75em 1em
+		background: #E1E1E1
+		font-weight: 800
+		text-transform: uppercase
+		text-align: center
+		transition: background .3s, color .3s
+		&:hover
+			background: #1565C0
+			color: #fff
+		&.active
+			color: #fff
+			background: #1565C0
+.document-slider
+	padding: 0 1.1em
+	.slick-slide
+		padding: 0 .3em
+	.slick-next,.slick-prev
+		top: 40%
+.document-item_img
+	margin-bottom: .5em
+	img
+		width: 100%
+.document-item
+	font-size: 1.25rem
+	font-weight: 500
+.map-contact_mod
+	position: static
+	padding-top: 3em
+	transform: none!important
+.contact-section_content
+	margin-top: 2.5em
+.fancybox-container
+	z-index: 1000
+/**main-footer**/
+.main-footer
+	flex: 0 0 auto
+	background: #fff
+	position: relative
+	overflow: hidden
+	z-index: 1
+.main-footer_right
+	position: relative
+	padding: 2em 15px
+	&:after
+		content: ''
+		display: block
+		width: 300%
+		height: 100%
+		background: #01162E
+		position: absolute
+		top: 0
+		left: -10%
+		transform: skew(-45deg)
+		z-index: -1
+	.column
+		padding: 0 15px
+		width: 38.5%
+		&:last-child
+			width: 23%
+.footer-logo
+	margin-top: -10px
+	margin-bottom: .8em
+	img
+		max-width: 100%
+.footer-policy-link
+	li
+		margin-bottom: .2em
+	a
+		font-size: .75rem
+		color: #1565c0
+		border-bottom: 1px solid #1565c0
+		transition: border-bottom-color .3s
+		&:hover
+			border-bottom-color: transparent
+.copyright
+	font-size: .75rem
+	margin-bottom: 1.5em
+.footer-title
+	font-weight: 800
+	color: #fff
+	margin-bottom: .1em
+	text-transform: uppercase
+.footer-menu
+	li
+		margin-bottom: .4em
+		line-height: 1.2
+		&:last-child
+			margin-bottom: 0
+	a
+		color: #ccdae9
+		font-size: .875rem
+		border-bottom: 1px solid transparent
+		transition: border-bottom-color .3s
+		&:hover
+			border-bottom-color: #ccdae9
+.studio
+	margin-bottom: 1.05em
+.scroll-to-top
+	display: block
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	background: #1565C0
+	cursor: pointer
+	position: fixed
+	right: 30px
+	bottom: 20px
+	opacity: 0
+	transform: scale(0)
+	transition: transform 0.4s, opacity 0.6s
+	z-index: 100
+	&:after
+		content: ""
+		display: block
+		height: 30%
+		width: 30%
+		border-top: 3px solid #fff
+		border-right: 3px solid #fff
+		position: absolute
+		top: 4px
+		bottom: 0
+		left: -1px
+		right: 0
+		margin: auto
+		-webkit-transform: rotate(-45deg)
+		-ms-transform: rotate(-45deg)
+		transform: rotate(-45deg)
+	&:hover
+		opacity: 0.7
+	&.is-hidden
+		display: none
+.scroll-to-top-visible
+	transform: scale(1)
+	opacity: 1
+
+
+.tablet-small-visible
+	display: none
+.mobile-visible
+	display: none
+
+.mfp-close
+	position: absolute
+	top: .2em
+	right: .2em
+	font-size: 2.5rem
+	font-weight: 400
+	cursor: pointer
+	color: #333333
+	opacity: 1
+	transition: color .3s
+	&:hover
+		color: #1565C0
+.mfp-close:active
+	top: .2em
+.my-mfp-zoom-in .zoom-anim-dialog
+	opacity: 0
+	transition: all 0.5s ease-in-out
+	transform: scale(0.4)
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog
+	opacity: 1
+	transform: scale(1)
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog
+	-webkit-transform: scale(0.8)
+	-moz-transform: scale(0.8)
+	-ms-transform: scale(0.8)
+	-o-transform: scale(0.8)
+	transform: scale(0.8)
+	opacity: 0
+.my-mfp-zoom-in
+	&.mfp-bg
+		opacity: 0
+		-webkit-transition: opacity 0.3s ease-out
+		-moz-transition: opacity 0.3s ease-out
+		-o-transition: opacity 0.3s ease-out
+		transition: opacity 0.3s ease-out
+	&.mfp-ready.mfp-bg
+		opacity: 0.8
+	&.mfp-removing.mfp-bg
+		opacity: 0
+.my-mfp-slide-bottom
+	.zoom-anim-dialog
+		opacity: 0
+		transition: all 0.2s ease-out
+		transform: translateY(-20px) perspective(600px) rotateX(10deg)
+	&.mfp-ready .zoom-anim-dialog
+		opacity: 1
+		transform: translateY(0) perspective(600px) rotateX(0)
+	&.mfp-removing .zoom-anim-dialog
+		opacity: 0
+		transform: translateY(-10px) perspective(600px) rotateX(10deg)
+	&.mfp-bg
+		opacity: 0
+		transition: opacity 0.3s ease-out
+	&.mfp-ready.mfp-bg
+		opacity: 0.8
+	&.mfp-removing.mfp-bg
+		opacity: 0
+.zoom-anim-dialog
+	max-width: 440px
+	margin: 2em auto
+.mfp-container
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+.callback-form
+	background: #fff
+	position: relative
+	padding: 1.7em 2em 2em
+	// max-width: 665px
+	margin: 20px auto
+.callback-form_title
+	font-size: 1.5rem
+	font-weight: 800
+	margin-bottom: 1.3em
+	text-transform: uppercase
+	text-align: center
+	small
+		display: block
+		font-size: 1rem
+		font-weight: 500
+		text-transform: none
+.callback-form_policy
+	margin-bottom: 1.5em
+.form-input
+	height: 42px
+	width: 100%
+	background: #fff
+	border-radius: 21px
+	padding: 0 1em
+	border: 1px solid rgba(0, 0, 0, 0.1)
+	transition: border .3s
+	&:focus
+		border: 1px solid #1565C0
+	&::-webkit-input-placeholder
+		color: rgba(51,51,51,.4)
+	&::-moz-placeholder
+		color: rgba(51,51,51,.4)
+	&::-ms-input-placeholder
+		color: rgba(51,51,51,.4)
+	&::input-placeholder
+		color: rgba(51,51,51,.4)
+.form-group
+	margin-bottom: 1.5em
+.form-submit_btn
+	width: 100%
+@media only screen and (max-width: 1250px)
+	.head-menu_item
+		font-size: .875rem
+	.main-btn
+		font-size: .875rem
+	.head_phone-number
+		font-size: 1.125rem
+	.head-adress
+		font-size: 1.125rem
+	.main-head_icon
+		font-size: 1.3rem
+	.company-motto_top-text
+		font-size: 1.25rem
+		&:after
+			width: 80px
+			bottom: 5px
+	.company-motto_bottom-text:before
+		width: 80px
+		top: 4px
+	.benefit-item_header
+		font-size: 1.5rem
+	.benefit-item_header-number
+		font-size: 2.45rem
+	.our-team-name
+		font-size: 1rem
+	.main-footer_right:after
+		left: -6%
+		transform: skew(-27deg)
+	.main-slider
+		.slick-prev
+			transform: translate(-460px, 0)
+		.slick-next
+			transform: translate(-400px, 0)
+	.map-contact
+		transform: translate(85px, 0)
+	.fixed-menu .scroll-hidden_block
+		width: 39%
+	.service-more-btn
+		&:after,&:before
+			width: 90px
+		&:after
+			background-position: right top
+	.main-footer:after
+		transform: skew(-8deg)
+	.fixed-menu
+		.callback-btn
+			display: none
+		.tablet-scroll-visible
+			display: block
+		.head-nav
+			width: 65%
+		.scroll-hidden_block
+			width: 26%
+			li
+				padding: 0
+		.container
+			max-width: 100%
+	.head-menu_item
+		position: static
+	.head_bottom-panel
+		position: relative
+		z-index: 50
+		.container
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: space-between
+		.head-nav
+			flex-basis: calc(100% - 50px)
+	.static-menu-hidden
+		display: none
+	.hamburger-and-menu
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+	.dropdown-menu_item
+		font-size: .875rem
+	.dropdown-content
+		width: calc(100% - 30px)
+		left: 15px
+	.dropdown-menu_item > a
+		padding-left: .8em
+		padding-right: .8em
+	.fixed-menu
+		position: fixed
+		.head-nav
+			width: 65%
+		.static-menu-hidden
+			display: block
+	.hamburger-and-menu
+		height: 54px
+	.scroll-hidden_block
+		height: 54px
+	.tablet-hidden
+		display: none
+	.benifit-column
+		margin-bottom: 1.25em
+	.our-sevices_menu
+		li
+			padding-left: .7em
+			padding-right: .7em
+			font-size: .835rem
+@media only screen and (max-width: 992px)
+	.head_company-motto
+		max-width: 487px
+		margin: 1em auto 0
+		.min
+			display: inline
+	.head_phone-number
+		margin-bottom: 1.7em
+	.company-motto_top-text:after
+		width: 110px
+	.company-motto_bottom-text:before
+		width: 110px
+	.map-contact
+		width: 300px
+		transform: translate(45px, 0)
+		padding-left: 1em
+		padding-right: 1em
+		padding-top: 2em
+	.main-slider
+		.slick-prev
+			transform: translate(-340px, 0)
+		.slick-next
+			transform: translate(-290px, 0)
+		.slick-dots
+			bottom: 1em
+	.service-more-btn
+		&:after,&:before
+			width: 60px
+	.main-footer_right:after
+		transform: none
+		left: -20%
+		width: 150%
+	.main-footer
+		padding-top: 2em
+	.fixed-menu
+		.head-nav
+			width: 65%
+		.scroll-hidden_block
+			width: 30%
+		.head-menu_item > a
+			padding: 1.3em .3em
+	.main-footer_left
+		text-align: center
+	.services-section_body
+		padding: 1.5em 15px
+	.services-section_footer-content
+		.min
+			display: inline
+	.section-title
+		padding-top: 1.8em
+		font-size: 1.5em
+		margin-bottom: 1em
+	h1,h2
+		font-size: 1.5em
+		margin-bottom: 1em
+	.benefits-section
+		padding: 1.5em 0
+	.popular-services_section
+		padding: 1.5em 0
+	.about-us_section
+		padding: 1.5em 0
+	.our-team_section
+		padding: 1.5em 0 0.5em
+	.global-pad
+		padding-top: 54px
+	.our-sevices_menu
+		flex-wrap: wrap
+		justify-content: center
+		li
+			margin-top: 3px
+	.breadcrumbs
+		padding: .75em 0
+		margin-bottom: 1.5em
+	.our-sevices_section
+		padding-bottom: 1.5em
+	.services-detailed h4
+		margin-top: 1.2em
+	.sidebar-menu_item > a
+		font-size: .875rem
+		padding-left: .7em
+		padding-right: .7em
+	.sidebar-banner_content
+		padding: 0 1em
+	.services-detailed_footer .main-btn
+		max-width: 49%
+		font-size: .835rem
+	.our-specialists_section
+		padding: .5em 0 .7em
+	.our-specialists_slider.slick-slider
+		margin-bottom: 1.5em
+	.our-specialists_section h4
+		margin-bottom: 1em
+	.main-slider_inner .main-slide_content
+		padding: 3em 0
+	.main-head
+		padding: 1.2em 0
+	.head-adress
+		margin-bottom: .2em
+		small
+			margin-bottom: -2px
+	.head_company-motto
+		padding-bottom: 1.7em
+	.head_bottom-panel
+		.container
+			max-width: 750px
+	.head-menu_item > a
+		padding: 1.45em .8em
+	.contact-section
+		padding-bottom: 1.7em
+	.main-slider .slick-prev, .main-slider .slick-next
+		bottom: 2%
+	.main-footer_left
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		.copyright
+			margin-top: .5em
+@media only screen and (max-width: 767px)
+	.map-contact
+		width: 100%
+		height: auto
+		bottom: auto
+		padding: 1em
+		transform: none
+		left: 0
+		top: 0
+		text-align: center
+	.section-title
+		padding-top: 1em
+		&:before
+			width: 300px
+			height: 20px
+			background-size: contain
+	.map-contact_list
+		display: inline-block
+		text-align: left
+		margin-bottom: .7em
+		li
+			font-size: .975rem
+			margin-bottom: .4em
+	.map-contact_btn
+		display: block
+		margin: 0 auto
+	.map-contact_icon
+		font-size: 1rem
+	.map-contact_list small
+		font-size: .75rem
+	.map-contact_logo
+		margin-bottom: .7em
+	.map-container
+		height: 600px
+	.main-footer_right
+		.column
+			margin-bottom: 1em
+			width: 50%
+			&:last-child
+				width: 100%
+	.main-footer_right
+		padding-top: 1.25em
+		padding-bottom: 0.25em
+	.footer-logo
+		margin-top: 0
+	.main-footer
+		padding-top: 1.25em
+	.tablet-small-hidden
+		display: none
+	.tablet-small-visible
+		display: block
+	.fixed-menu
+		.head-menu_item
+			font-size: .75rem
+		.head-nav
+			width: 50%
+		.scroll-hidden_block
+			width: 42%
+	.static-menu-hidden
+		display: block
+	.services-section_title-second
+		&:after
+			left: -2em
+			transform: none
+	.services-section_body
+		padding-top: 1.25em
+		padding-bottom: 1.25em
+	.services-section_title-second
+		margin: 1.25em 0
+	.service-more-btn:after, .service-more-btn:before
+		width: 27%
+	.services-section_footer-column_first .services-section_footer-content
+		text-align: left
+	.services-section_footer-column_first
+		justify-content: flex-start
+	.services-section_footer-column_second
+		padding-left: 30px
+	.head-logo
+		margin-bottom: 1em
+		text-align: center
+	.dropdown-menu
+		display: block
+	.dropdown-menu_item
+		display: block
+		position: relative
+		>a
+			padding: .8em 1em
+	.dropdown-content
+		display: none
+		visibility: visible
+		opacity: 1
+		&.is-active
+			display: block
+	.dropdown-menu_second-level
+		position: static
+		padding: 1em
+	.dropdown-menu_item > a:after
+		display: none
+	.dropdown-menu_third-level
+		position: static
+		width: auto
+		padding: 1em
+		margin: 0 -1em
+	.fixed-menu
+		.scroll-hidden_block
+			height: 45px
+		.hamburger-and-menu
+			height: 45px
+	.our-sevices_menu li
+		font-size: .7rem
+	.our-sevices_img
+		margin-bottom: 0
+	.main-slide_title
+		font-size: 3rem
+		text-align: center
+	.services-detailed_footer
+		margin-bottom: 1.2em
+	.sidebar-banner
+		margin-bottom: 1.25em
+	.sidebar-menu
+		margin-bottom: 1.25em
+	.news-detailed_date
+		margin-bottom: 1.3em
+	.all-news_btn
+		display: block
+		margin: 1.5em auto 2em
+	.news-detailed
+		.sidebar-banner
+			margin-bottom: 0
+	.contact-section_content
+		margin-top: 1.5em
+	.documents_tab-names
+		margin-top: 1em
+	.main-footer_left
+		display: block
+@media only screen and (max-width: 576px)
+	.mobile-hidden
+		display: none
+	.head_phone-number
+		margin: 1.3em 0 1em
+	.col-mod-left
+		padding-left: 15px
+	.head_company-motto
+		margin-top: 1.5em
+		padding-bottom: 2.2em
+		.min
+			display: block
+	.service-item
+		padding-bottom: 1.2em
+		margin-bottom: 1em
+	.service-more-btn
+		font-size: .8rem
+	.service-more-btn:after, .service-more-btn:before
+		width: 20%
+	.services-section_title
+		font-size: 1.125rem
+		padding: .5em 0
+	.services-section_footer-number
+		font-size: 2.5rem
+	.services-section_footer-column p
+		font-size: 1rem
+	.services-section_footer-column
+		min-height: 170px
+	.section-title
+		font-size: 1.35rem
+	h1,h2
+		font-size: 1.35em
+	.breadcrumbs
+		padding: .5em 0
+		margin-bottom: 1.2em
+	.benefits-section
+		padding-bottom: 1em
+	.all-services_conpany-link
+		margin-top: 0
+	.scroll-to-top
+		opacity: .7
+		border-radius: 100%
+		width: 25px
+		height: 25px
+		right: 18px
+		left: auto
+		&:before
+			content: ''
+			display: block
+			width: 140%
+			height: 140%
+			border-radius: 50%
+			border: 2px solid #1565C0
+			position: absolute
+			top: -5px
+			left: -5px
+			z-index: -1
+		&:after
+			left: 0
+			top: 2px
+	.fixed-menu
+		.head-nav
+			display: none
+		.scroll-hidden_block
+			width: 70%
+			height: 40px
+		.head_phone-number
+			margin: 0
+		.hamburger-and-menu
+			height: 40px
+	.mobile-visible
+		display: block
+	.mobile-menu-hidden
+		display: none
+	.fixed-menu
+		.mobile-menu-hidden
+			display: block
+	.main-form_title
+		font-size: 1.25rem
+		text-align: center
+	.main-slide_content
+		min-height: auto
+		padding-bottom: 2.8em
+	.slick-dots
+		bottom: 1em
+	.wrapper-unified-checkbox .checkbox-text
+		line-height: 1.4
+	.head_bottom-panel
+		&.is-active
+			position: relative !important
+			transform: none !important
+			.head-nav
+				display: block
+				flex-basis: calc(100% - 50px)
+				margin-right: 0
+			.scroll-hidden_block
+				display: none
+			&.fixed-menu 
+				.menu-item_scroll-hidden
+					display: block
+				.tablet-small-hidden
+					display: none
+				.tablet-hidden
+					display: none
+			.hamburger-and-menu
+				height: 54px
+			.head-menu_item
+				font-size: .875rem
+	.global-pad-mod
+		padding-top: 0
+	.our-sevices_menu
+		display: block
+		li
+			margin-top: 3px
+	.our-sevices_section
+		padding-bottom: 1em
+	.our-sevices_item-title
+		font-size: 1.125rem
+	.main-slide_title
+		font-size: 2.4rem
+	.services-detailed 
+		h4
+			font-size: 1.125rem
+			margin: .7rem 0
+		p
+			margin-bottom: .7em
+	.services-detailed_footer
+		display: block
+		.main-btn
+			margin-bottom: 1.25em
+			max-width: 100%
+			&:last-child
+				margin-bottom: 0
+	.sidebar-banner_number
+		font-size: 2.5rem
+	.sidebar-banner p
+		font-size: 1.25rem
+	.sidebar-banner_title
+		font-size: 1.5rem
+	.our-specialists_section
+		h3
+			font-size: 1.35rem
+		p
+			margin-bottom: .7em
+		h4
+			font-size: 1.125rem
+			margin-bottom: .7em
+	.main-slider_inner .main-slide_content
+		padding-top: 2em
+	.head-adress
+		margin-bottom: 1em
+	.dropdown-menu
+		padding-top: .7em
+		// padding-bottom: .7em
+	.dropdown-menu_item > a
+		padding: .5em 1.3em
+	.dropdown-menu_item
+		&:last-child
+			a
+				padding-bottom: 1.2em
+	.dropdown-menu_second-level
+		// margin-top: .7em
+		padding-left: 2em
+		padding-right: 2em
+	.dropdown-menu_second-level > li
+		width: 100%
+	.dropdown-menu_second-level li.dropdown-menu_title
+		font-size: 0.8125rem
+	.dropdown-menu_third-level
+		position: relative
+		width: calc(100% + 55px)
+		margin: .8em -2.1em
+		padding: 1em 3em
+	.fixed-menu .dropdown-menu_second-level
+		max-height: 100%
+		overflow: visible
+	.main-pagination
+		margin-top: 1em
+	.news-section
+		padding-bottom: 2.5em
+	.news-item p
+		margin: .7em 0
+	.map-container_mod
+		height: 300px
+	.contact-section_content
+		margin-top: 1em
+	.contact-section p
+		margin-bottom: .7em
+	.documents_tab-names
+		margin-top: .5em
+	.benefit-item_header
+		padding: .25em .2em .25em
+	.benefit-item_header-number
+		padding: .1em 0 .15em
+@media only screen and (max-width: 400px)
+	.main-footer_right .column
+		width: 100%
+	.footer-title
+		text-align: center
+	.footer-menu
+		text-align: center
+	
