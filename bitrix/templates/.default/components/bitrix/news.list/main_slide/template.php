@@ -32,7 +32,6 @@ $this->setFrameMode(true);
 											Я согласен на обработку персональных данных в соответсвии с нашей <a target="_blank" href="/upload/politics-argument-uk.pdf">политикой конфиденциальности</a>
 										</span>
 									</label>
-									<small class="recaptcha-legal">Этот сайт защищён reCAPTCHA. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Конфиденциальность</a> и <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Условия использования</a> Google.</small>
 									<div class="err_msg"></div>
 									<input type="submit" class="main-form_submit main-btn" value="Оставить заявку">
 								</div>
