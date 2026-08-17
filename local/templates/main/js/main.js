@@ -296,21 +296,6 @@ jQuery(document).ready(function($) {
 	  
 	window.addEventListener('load', () => {
 		
-	  const recaptcha = $('.g-recaptcha-response');
-	  $.each(recaptcha, function(i, el){
-		  el.setAttribute('required', 'required');
-	  });
-	  
-	});
-	
-	$('.main-slider .input-checkbox').change(function(){
-			let self = $(this);
-			let captcha = self.closest('form').find('.g-recaptcha');
-			
-			if(self.prop('checked'))
-				captcha.show();
-			else
-				captcha.hide();
 	});
 	
 });

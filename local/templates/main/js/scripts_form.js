@@ -4,6 +4,20 @@
         return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]+[a-z]/i).test(email);
     }
 
+    function argumentRecaptchaToken(action) {
+        var cfg = window.ARGUMENT_RECAPTCHA || {};
+        if (!cfg.enabled || !cfg.sitekey || typeof grecaptcha === 'undefined') {
+            return Promise.resolve('');
+        }
+        return new Promise(function(resolve, reject) {
+            grecaptcha.ready(function() {
+                grecaptcha.execute(cfg.sitekey, { action: action || 'submit' })
+                    .then(resolve)
+                    .catch(reject);
+            });
+        });
+    }
+
     $(document).on("click", "#ur_main_list", function() {
 		$('#fiz_list').hide();
 		$('#ur_list').show();
@@ -57,23 +71,28 @@
         }
  
         if(mist==0){
-            $.ajax({
-                type: "POST",
-                url: "/local/templates/main/ajax/feadback.php",
-                data: ( {
-                    "name" : name,
-                    "mail" : mail,
-                    "phone" : phone,
-                    "text" : text
-                } ) ,
-                success: function(msg){
-                    $('#make-appointment .err_msg').html(msg);
-                    $('#make-appointment input[name=name_f]').val('');
-                    $('#make-appointment input[name=phone_f]').val('');
-                    $('#make-appointment input[name=email_f]').val('');
-                    $('#make-appointment input[name=text_f]').val(''); 
-                    setTimeout('$("#make-appointment .mfp-close").trigger( "click" );$("#make-appointment .err_msg").html("");', 2000);
-                }
+            argumentRecaptchaToken('feadback').then(function(token) {
+                $.ajax({
+                    type: "POST",
+                    url: "/local/templates/main/ajax/feadback.php",
+                    data: ( {
+                        "name" : name,
+                        "mail" : mail,
+                        "phone" : phone,
+                        "text" : text,
+                        "g-recaptcha-response" : token
+                    } ) ,
+                    success: function(msg){
+                        $('#make-appointment .err_msg').html(msg);
+                        $('#make-appointment input[name=name_f]').val('');
+                        $('#make-appointment input[name=phone_f]').val('');
+                        $('#make-appointment input[name=email_f]').val('');
+                        $('#make-appointment input[name=text_f]').val(''); 
+                        setTimeout('$("#make-appointment .mfp-close").trigger( "click" );$("#make-appointment .err_msg").html("");', 2000);
+                    }
+                });
+            }).catch(function() {
+                $('#make-appointment .err_msg').html('<div class="mass" style="color:red;">Ошибка проверки капчи</div>');
             });
         }
         return false;
@@ -106,19 +125,24 @@
         }
 
         if(mist==0){
-            $.ajax({
-                type: "POST",
-                url: "/local/templates/main/ajax/callback.php",
-                data: ( {
-                    "name" : name,
-                    "phone" : phone
-                } ) ,
-                success: function(msg){
-                    $('#callback .err_msg').html(msg);
-                    $('#callback input[name=name_f]').val('');
-                    $('#callback input[name=phone_f]').val('');
-                    setTimeout('$("#callback .mfp-close").trigger( "click" );$("#callback .err_msg").html("");', 2000);
-                }
+            argumentRecaptchaToken('callback').then(function(token) {
+                $.ajax({
+                    type: "POST",
+                    url: "/local/templates/main/ajax/callback.php",
+                    data: ( {
+                        "name" : name,
+                        "phone" : phone,
+                        "g-recaptcha-response" : token
+                    } ) ,
+                    success: function(msg){
+                        $('#callback .err_msg').html(msg);
+                        $('#callback input[name=name_f]').val('');
+                        $('#callback input[name=phone_f]').val('');
+                        setTimeout('$("#callback .mfp-close").trigger( "click" );$("#callback .err_msg").html("");', 2000);
+                    }
+                });
+            }).catch(function() {
+                $('#callback .err_msg').html('<div class="mass" style="color:red;">Ошибка проверки капчи</div>');
             });
         }
         return false;
@@ -144,10 +168,11 @@
 
     $(document).on("submit", ".main-slide form", function() {
         var mist=0;
-        var name=$(this).children('.main-form_group').children('input[name=name]').val();
-        var phone=$(this).children('.main-form_group').children('input[name=phone]').val();
+        var $form = $(this);
+        var name=$form.children('.main-form_group').children('input[name=name]').val();
+        var phone=$form.children('.main-form_group').children('input[name=phone]').val();
         var agree='';
-        agree=$(this).children('.main-form_policy').children('.wrapper-unified-checkbox').children('input[name=checkbox]:checked').val();
+        agree=$form.children('.main-form_policy').children('.wrapper-unified-checkbox').children('input[name=checkbox]:checked').val();
 
         if (agree!='y') {
             mist=mist+1;
@@ -156,33 +181,38 @@
 
         } 
         if(name!=''){
-            $(this).children('.main-form_group').children('input[name=name]').parent().removeClass("error");
+            $form.children('.main-form_group').children('input[name=name]').parent().removeClass("error");
         }else{
-            $(this).children('.main-form_group').children('input[name=name]').parent().addClass("error");
+            $form.children('.main-form_group').children('input[name=name]').parent().addClass("error");
             mist=mist+1;
         }
 
         if(phone!=''){
-            $(this).children('.main-form_group').children('input[name=phone]').parent().removeClass("error");
+            $form.children('.main-form_group').children('input[name=phone]').parent().removeClass("error");
         }else{
-            $(this).children('.main-form_group').children('input[name=phone]').parent().addClass("error");
+            $form.children('.main-form_group').children('input[name=phone]').parent().addClass("error");
             mist=mist+1;
         }
 
         if(mist==0){
-            $.ajax({
-                type: "POST",
-                url: "/local/templates/main/ajax/callback.php",
-                data: ( {
-                    "name" : name,
-                    "phone" : phone
-                } ) ,
-                success: function(msg){
-                    $('.main-slide form .main-form_policy .err_msg').html(msg);
-                    $('.main-slide form input[name=name]').val('');
-                    $('.main-slide form input[name=phone]').val('');
-					$(".main-slide form input[name=checkbox]").prop("checked", false);
-                }
+            argumentRecaptchaToken('callback').then(function(token) {
+                $.ajax({
+                    type: "POST",
+                    url: "/local/templates/main/ajax/callback.php",
+                    data: ( {
+                        "name" : name,
+                        "phone" : phone,
+                        "g-recaptcha-response" : token
+                    } ) ,
+                    success: function(msg){
+                        $('.main-slide form .main-form_policy .err_msg').html(msg);
+                        $('.main-slide form input[name=name]').val('');
+                        $('.main-slide form input[name=phone]').val('');
+                        $(".main-slide form input[name=checkbox]").prop("checked", false);
+                    }
+                });
+            }).catch(function() {
+                $('.main-slide form .main-form_policy .err_msg').html('<div class="mass" style="color:red;">Ошибка проверки капчи</div>');
             });
         }
         return false;

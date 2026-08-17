@@ -7,6 +7,11 @@ foreach ($_POST as $key=>$arPost) {
     $clear[$key]=trim(htmlspecialchars($arPost));
 }
 
+$captchaCheck = argument_recaptcha_verify($clear['g-recaptcha-response'] ?? '', 'callback');
+if ($captchaCheck !== true) {
+	echo '<div class="mass" style="color:red;">'.htmlspecialchars($captchaCheck).'</div>';
+	return;
+}
 
 $arEventFields = array(
 	"NAME"                  => $clear["name"],

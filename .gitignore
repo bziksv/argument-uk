@@ -41,3 +41,6 @@ yandex_*
 google*
 mailru-*
 cmsmagazine*
+
+# reCAPTCHA secret
+local/php_interface/recaptcha_secret.php

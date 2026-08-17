@@ -25,9 +25,6 @@ $this->setFrameMode(true);
 								<div class="main-form_group">
 									<input type="tel" class="main-form_input"  name="phone" placeholder="Телефон">
 								</div>
-								<div class="main-form_group">
-									<div class="g-recaptcha" style="margin: 0 auto;" data-sitekey="<?= htmlspecialchars(argument_recaptcha_sitekey(), ENT_QUOTES) ?>"></div>
-								</div>
 								<div class="main-form_policy">
 									<label class="wrapper-unified-checkbox">
 										<input value="y" type="checkbox" name="checkbox" class="input-checkbox">
