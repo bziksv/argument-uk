@@ -329,6 +329,7 @@ $filterPop["ID"] = $filter_pop;
 								Я согласен на обработку персональных данных в соответствии с нашей <a target="_blank" href="/upload/politics-argument-uk.pdf" tabindex="0">политикой конфиденциальности</a>
 							</span>
 						</label>
+						<small class="recaptcha-legal">Этот сайт защищён reCAPTCHA. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Конфиденциальность</a> и <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Условия использования</a> Google.</small>
 					</div>
 					<div class="err_msg"></div>
 					<input type="submit" class="form-submit_btn main-btn" value="Перезвоните мне">
@@ -365,6 +366,7 @@ $filterPop["ID"] = $filter_pop;
 								Я согласен на обработку персональных данных в соответствии с нашей <a target="_blank" href="/upload/politics-argument-uk.pdf" tabindex="0">политикой конфиденциальности</a>
 							</span>
 						</label>
+						<small class="recaptcha-legal">Этот сайт защищён reCAPTCHA. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Конфиденциальность</a> и <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Условия использования</a> Google.</small>
 					</div>
 					<div class="err_msg"></div>
 					<input type="submit" class="form-submit_btn main-btn" value="Перезвоните мне">
@@ -374,7 +376,7 @@ $filterPop["ID"] = $filter_pop;
 		</div>
 		<!-- end make-appointment -->
 		<link href="<?=SITE_TEMPLATE_PATH?>/css/min.css" rel="stylesheet" />
-		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css" rel="stylesheet" />
+		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=hide-badge" rel="stylesheet" />
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/min.js"></script>
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js?v=5bdf4305"></script>
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js?v=5bdf4305"></script>

@@ -3678,3 +3678,25 @@ ul:not([class]) li:last-child {
     text-align: center;
   }
 }
+
+/* reCAPTCHA v3: badge hidden — branding required near forms (Google ToS) */
+.grecaptcha-badge {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.recaptcha-legal {
+  display: block;
+  margin-top: .55em;
+  font-size: 11px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, .72);
+}
+.callback-form .recaptcha-legal,
+.zoom-anim-dialog .recaptcha-legal {
+  color: #888;
+}
+.recaptcha-legal a {
+  color: inherit;
+  text-decoration: underline;
+}
