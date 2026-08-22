@@ -8,7 +8,7 @@ require_once __DIR__ . '/third_parties_render.php';
 $thirdParties = argumentLegalThirdPartiesData();
 ?>
 <div class="legal-doc legal-doc--policy">
-	<p class="legal-doc__lead"><strong>Политика обработки персональных данных <?= argument_legal_var($legal['operator_name']) ?> (ИНН: <?= argument_legal_var($legal['inn']) ?>)</strong></p>
+	<p class="legal-doc__lead"><strong>Политика обработки персональных данных <?= argument_legal_var($legal['operator_name']) ?></strong></p>
 
 	<p class="legal-doc__related">Связанные документы:
 		<a href="<?= argument_legal_h($legal['urls']['consent']) ?>">Согласие на обработку персональных данных</a>,
@@ -17,7 +17,7 @@ $thirdParties = argumentLegalThirdPartiesData();
 	</p>
 
 	<h2>1. Общие положения</h2>
-	<p>1.1. Настоящая Политика обработки персональных данных (далее — «Политика») разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных <?= argument_legal_var($legal['operator_name']) ?> (далее — «Оператор») и меры по обеспечению безопасности персональных данных пользователей сайта <?= argument_legal_link($legal['site']) ?> (далее — «Сайт»). Данные Оператора указаны в разделе 12 Политики.</p>
+	<p>1.1. Настоящая Политика обработки персональных данных (далее — «Политика») разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных <?= argument_legal_var($legal['operator_name']) ?>, ИНН: <?= argument_legal_var($legal['inn']) ?> (далее — «Оператор») и меры по обеспечению безопасности персональных данных пользователей сайта <?= argument_legal_link($legal['site']) ?> (далее — «Сайт»). Данные Оператора указаны в разделе 12 Политики.</p>
 
 	<p>1.2. <strong>Термины и определения:</strong></p>
 	<ul>
