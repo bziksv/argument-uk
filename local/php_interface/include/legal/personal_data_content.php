@@ -8,7 +8,7 @@ require_once __DIR__ . '/third_parties_render.php';
 $thirdParties = argumentLegalThirdPartiesData();
 ?>
 <div class="legal-doc legal-doc--policy">
-	<p class="legal-doc__lead"><strong>Политика обработки персональных данных <?= argument_legal_var($legal['operator_name']) ?></strong></p>
+	<p class="legal-doc__lead"><strong>Политика обработки персональных данных <?= argument_legal_var($legal['operator_name']) ?> (ИНН: <?= argument_legal_var($legal['inn']) ?>)</strong></p>
 
 	<p class="legal-doc__related">Связанные документы:
 		<a href="<?= argument_legal_h($legal['urls']['consent']) ?>">Согласие на обработку персональных данных</a>,
