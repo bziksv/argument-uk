@@ -29,7 +29,7 @@ $this->setFrameMode(true);
 									<label class="wrapper-unified-checkbox">
 										<input value="y" type="checkbox" name="checkbox" class="input-checkbox">
 										<span class="checkbox-text">
-											Я согласен на обработку персональных данных в соответсвии с нашей <a target="_blank" href="/upload/politics-argument-uk.pdf">политикой конфиденциальности</a>
+											Я даю <a target="_blank" href="/legal/argument-pdn-consent/">согласие на обработку персональных данных</a> и соглашаюсь с условиями <a target="_blank" href="/legal/argument-personal-data-policy/">политики обработки персональных данных</a>
 										</span>
 									</label>
 									<div class="err_msg"></div>

@@ -326,7 +326,7 @@ $filterPop["ID"] = $filter_pop;
 						<label class="wrapper-unified-checkbox">
 							<input value="y" type="checkbox" name="checkbox_f" class="input-checkbox" tabindex="0">
 							<span class="checkbox-text checkbox-text_mod">
-								Я согласен на обработку персональных данных в соответствии с нашей <a target="_blank" href="/upload/politics-argument-uk.pdf" tabindex="0">политикой конфиденциальности</a>
+								Я даю <a target="_blank" href="/legal/argument-pdn-consent/" tabindex="0">согласие на обработку персональных данных</a> и соглашаюсь с условиями <a target="_blank" href="/legal/argument-personal-data-policy/" tabindex="0">политики обработки персональных данных</a>
 							</span>
 						</label>
 					</div>
@@ -362,7 +362,7 @@ $filterPop["ID"] = $filter_pop;
 						<label class="wrapper-unified-checkbox">
 							<input value="y" type="checkbox" name="checkbox_f" class="input-checkbox" tabindex="0">
 							<span class="checkbox-text checkbox-text_mod">
-								Я согласен на обработку персональных данных в соответствии с нашей <a target="_blank" href="/upload/politics-argument-uk.pdf" tabindex="0">политикой конфиденциальности</a>
+								Я даю <a target="_blank" href="/legal/argument-pdn-consent/" tabindex="0">согласие на обработку персональных данных</a> и соглашаюсь с условиями <a target="_blank" href="/legal/argument-personal-data-policy/" tabindex="0">политики обработки персональных данных</a>
 							</span>
 						</label>
 					</div>
@@ -374,10 +374,10 @@ $filterPop["ID"] = $filter_pop;
 		</div>
 		<!-- end make-appointment -->
 		<link href="<?=SITE_TEMPLATE_PATH?>/css/min.css" rel="stylesheet" />
-		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=no-legal" rel="stylesheet" />
+		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=legal-1" rel="stylesheet" />
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/min.js"></script>
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js?v=5bdf4305"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js?v=5bdf4305"></script>
+		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js?v=no-recaptcha"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

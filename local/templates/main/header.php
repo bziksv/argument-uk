@@ -23,15 +23,6 @@ $path=explode('/', $dir);
 		<link href="<?=SITE_TEMPLATE_PATH?>/img/favicon.png" rel="icon" type="image/png" />
 		<link href="<?=SITE_TEMPLATE_PATH?>/img/apple-touch-icon.png" rel="apple-touch-icon" />
 		<style>body{opacity: 0;}</style>
-		<script>
-			window.ARGUMENT_RECAPTCHA = {
-				sitekey: <?= json_encode(argument_recaptcha_sitekey(), JSON_UNESCAPED_SLASHES) ?>,
-				enabled: <?= argument_recaptcha_is_local() ? 'false' : 'true' ?>
-			};
-		</script>
-		<?php if (!argument_recaptcha_is_local()): ?>
-		<script src="https://www.google.com/recaptcha/api.js?render=<?= htmlspecialchars(argument_recaptcha_sitekey(), ENT_QUOTES) ?>"></script>
-		<?php endif; ?>
 	</head>
 	<body>
 		<!--[if lt IE 10]>

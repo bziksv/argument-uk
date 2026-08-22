@@ -4,42 +4,6 @@
         return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]+[a-z]/i).test(email);
     }
 
-    function argumentRecaptchaToken(action) {
-        var cfg = window.ARGUMENT_RECAPTCHA || {};
-        if (!cfg.enabled) {
-            return Promise.resolve('');
-        }
-        if (!cfg.sitekey) {
-            return Promise.reject(new Error('recaptcha sitekey missing'));
-        }
-        return new Promise(function(resolve, reject) {
-            var tries = 0;
-            function waitApi() {
-                if (typeof grecaptcha === 'undefined' || typeof grecaptcha.execute !== 'function' || typeof grecaptcha.ready !== 'function') {
-                    if (++tries > 80) {
-                        reject(new Error('recaptcha not loaded'));
-                        return;
-                    }
-                    setTimeout(waitApi, 100);
-                    return;
-                }
-                grecaptcha.ready(function() {
-                    grecaptcha.execute(cfg.sitekey, { action: action || 'submit' })
-                        .then(function(token) {
-                            if (!token) {
-                                reject(new Error('empty recaptcha token'));
-                                return;
-                            }
-                            resolve(token);
-                        })
-                        .catch(reject);
-                });
-            }
-            waitApi();
-        });
-    }
-    window.argumentRecaptchaToken = argumentRecaptchaToken;
-
     $(document).on("click", "#ur_main_list", function() {
 		$('#fiz_list').hide();
 		$('#ur_list').show();
@@ -93,28 +57,23 @@
         }
  
         if(mist==0){
-            argumentRecaptchaToken('feadback').then(function(token) {
-                $.ajax({
-                    type: "POST",
-                    url: "/local/templates/main/ajax/feadback.php",
-                    data: ( {
-                        "name" : name,
-                        "mail" : mail,
-                        "phone" : phone,
-                        "text" : text,
-                        "g-recaptcha-response" : token
-                    } ) ,
-                    success: function(msg){
-                        $('#make-appointment .err_msg').html(msg);
-                        $('#make-appointment input[name=name_f]').val('');
-                        $('#make-appointment input[name=phone_f]').val('');
-                        $('#make-appointment input[name=email_f]').val('');
-                        $('#make-appointment input[name=text_f]').val(''); 
-                        setTimeout('$("#make-appointment .mfp-close").trigger( "click" );$("#make-appointment .err_msg").html("");', 2000);
-                    }
-                });
-            }).catch(function() {
-                $('#make-appointment .err_msg').html('<div class="mass" style="color:red;">Ошибка проверки капчи</div>');
+            $.ajax({
+                type: "POST",
+                url: "/local/templates/main/ajax/feadback.php",
+                data: {
+                    "name": name,
+                    "mail": mail,
+                    "phone": phone,
+                    "text": text
+                },
+                success: function(msg){
+                    $('#make-appointment .err_msg').html(msg);
+                    $('#make-appointment input[name=name_f]').val('');
+                    $('#make-appointment input[name=phone_f]').val('');
+                    $('#make-appointment input[name=email_f]').val('');
+                    $('#make-appointment input[name=text_f]').val('');
+                    setTimeout('$("#make-appointment .mfp-close").trigger( "click" );$("#make-appointment .err_msg").html("");', 2000);
+                }
             });
         }
         return false;
@@ -147,24 +106,19 @@
         }
 
         if(mist==0){
-            argumentRecaptchaToken('callback').then(function(token) {
-                $.ajax({
-                    type: "POST",
-                    url: "/local/templates/main/ajax/callback.php",
-                    data: ( {
-                        "name" : name,
-                        "phone" : phone,
-                        "g-recaptcha-response" : token
-                    } ) ,
-                    success: function(msg){
-                        $('#callback .err_msg').html(msg);
-                        $('#callback input[name=name_f]').val('');
-                        $('#callback input[name=phone_f]').val('');
-                        setTimeout('$("#callback .mfp-close").trigger( "click" );$("#callback .err_msg").html("");', 2000);
-                    }
-                });
-            }).catch(function() {
-                $('#callback .err_msg').html('<div class="mass" style="color:red;">Ошибка проверки капчи</div>');
+            $.ajax({
+                type: "POST",
+                url: "/local/templates/main/ajax/callback.php",
+                data: {
+                    "name": name,
+                    "phone": phone
+                },
+                success: function(msg){
+                    $('#callback .err_msg').html(msg);
+                    $('#callback input[name=name_f]').val('');
+                    $('#callback input[name=phone_f]').val('');
+                    setTimeout('$("#callback .mfp-close").trigger( "click" );$("#callback .err_msg").html("");', 2000);
+                }
             });
         }
         return false;
@@ -217,24 +171,19 @@
         }
 
         if(mist==0){
-            argumentRecaptchaToken('callback').then(function(token) {
-                $.ajax({
-                    type: "POST",
-                    url: "/local/templates/main/ajax/callback.php",
-                    data: ( {
-                        "name" : name,
-                        "phone" : phone,
-                        "g-recaptcha-response" : token
-                    } ) ,
-                    success: function(msg){
-                        $('.main-slide form .main-form_policy .err_msg').html(msg);
-                        $('.main-slide form input[name=name]').val('');
-                        $('.main-slide form input[name=phone]').val('');
-                        $(".main-slide form input[name=checkbox]").prop("checked", false);
-                    }
-                });
-            }).catch(function() {
-                $('.main-slide form .main-form_policy .err_msg').html('<div class="mass" style="color:red;">Ошибка проверки капчи</div>');
+            $.ajax({
+                type: "POST",
+                url: "/local/templates/main/ajax/callback.php",
+                data: {
+                    "name": name,
+                    "phone": phone
+                },
+                success: function(msg){
+                    $('.main-slide form .main-form_policy .err_msg').html(msg);
+                    $('.main-slide form input[name=name]').val('');
+                    $('.main-slide form input[name=phone]').val('');
+                    $(".main-slide form input[name=checkbox]").prop("checked", false);
+                }
             });
         }
         return false;
