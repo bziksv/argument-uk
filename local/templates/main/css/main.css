@@ -1932,30 +1932,6 @@ ul:not([class]) li:last-child {
   background: #1565C0;
 }
 
-.our-sevices_group {
-  margin-top: 1.6em;
-}
-
-.our-sevices_group:first-child {
-  margin-top: 0;
-}
-
-.our-sevices_group-title {
-  margin: 0 0 .4em;
-  font-size: 1.35rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #1565C0;
-}
-
-.our-sevices_group-title a {
-  color: inherit;
-}
-
-.our-sevices_group-title a:hover {
-  border-bottom: 1px solid #1565C0;
-}
-
 .our-sevices_img {
   margin-bottom: .5em;
 }
