@@ -374,7 +374,7 @@ $filterPop["ID"] = $filter_pop;
 		</div>
 		<!-- end make-appointment -->
 		<link href="<?=SITE_TEMPLATE_PATH?>/css/min.css" rel="stylesheet" />
-		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=legal-1" rel="stylesheet" />
+		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=legal-2" rel="stylesheet" />
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/min.js"></script>
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js?v=5bdf4305"></script>
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js?v=no-recaptcha"></script>

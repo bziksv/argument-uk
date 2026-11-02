@@ -28,40 +28,42 @@ $this->setFrameMode(true);
             <img src="<?=SITE_TEMPLATE_PATH?>/img/static/our-sevices/01.jpg" alt="alt">
           <?}?>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <?
-            $cnt = count($arSec["ITEMS"]);
-            $r=0;
-            foreach($arSec["ITEMS"] as  $arIten){?>
-              <?
-				$r++;
-               $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-               $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-              ?>
-              <div class="our-sevices_item"  id="<?=$this->GetEditAreaId($arIten['ID']);?>">
-                <h4 class="our-sevices_item-title">
-                  <a href="<?=$arIten["DETAIL_PAGE_URL"]?>">• <?=$arIten["NAME"]?></a>
-                </h4>
-                <p>
-                  <?=$arIten["PREVIEW_TEXT"]?>
-                </p>
-              </div>
-              <?
-              if($cnt>1){
-                  if($cnt/2<=$r){
-                    $cnt=0;
-                    ?>
-                    </div>
-                    <div class="col-md-6">
-                    <?
-                  }
-              }
-
-            }?>
+        <?foreach($arSec["GROUPS"] as $arGroup){
+          $groupItems = array_values($arGroup["ITEMS"]);
+          $groupCount = count($groupItems);
+          $splitAt = (int)ceil($groupCount / 2);
+        ?>
+        <div class="our-sevices_group">
+          <?if($arGroup["SECTION"]){
+            $groupUrl = $arGroup["SECTION"]["SECTION_PAGE_URL"];
+            if(!$groupUrl){
+              $groupUrl = $arResult["LIST_PAGE_URL"].$arGroup["SECTION"]["CODE"]."/";
+            }
+          ?>
+          <h3 class="our-sevices_group-title">
+            <a href="<?=$groupUrl?>"><?=$arGroup["SECTION"]["NAME"]?></a>
+          </h3>
+          <?}?>
+          <div class="row">
+            <div class="col-md-6">
+              <?foreach($groupItems as $index => $arIten){
+                if($index === $splitAt){?>
+                  </div>
+                  <div class="col-md-6">
+                <?}?>
+                <div class="our-sevices_item" id="<?=$this->GetEditAreaId($arIten['ID']);?>">
+                  <h4 class="our-sevices_item-title">
+                    <a href="<?=$arIten["DETAIL_PAGE_URL"]?>">• <?=$arIten["NAME"]?></a>
+                  </h4>
+                  <p>
+                    <?=$arIten["PREVIEW_TEXT"]?>
+                  </p>
+                </div>
+              <?}?>
+            </div>
           </div>
-
         </div>
+        <?}?>
       </div>
 	  <?}}?>
   </div>
