@@ -69,6 +69,42 @@ foreach ($arResult["ITEMS"] as $item)
 	$tabs[$rootId]["GROUPS"][$groupId]["ITEMS"][] = $item;
 }
 
+foreach ($sections as $section)
+{
+	if ((int)$section["DEPTH_LEVEL"] !== 2)
+	{
+		continue;
+	}
+	$rootId = (int)$section["IBLOCK_SECTION_ID"];
+	if (!isset($sections[$rootId]) || !empty($sections[$rootId]["IBLOCK_SECTION_ID"]))
+	{
+		continue;
+	}
+	$groupId = (int)$section["ID"];
+	if (isset($tabs[$rootId]["GROUPS"][$groupId]))
+	{
+		continue;
+	}
+	if (!isset($tabs[$rootId]))
+	{
+		$picture = $sections[$rootId]["PICTURE"];
+		if (is_array($picture))
+		{
+			$picture = $picture["ID"];
+		}
+		$sections[$rootId]["PICTURE"] = $picture ? CFile::GetPath($picture) : "";
+		$tabs[$rootId] = array(
+			"SECTION" => $sections[$rootId],
+			"GROUPS" => array(),
+		);
+	}
+	$tabs[$rootId]["GROUPS"][$groupId] = array(
+		"SECTION" => $section,
+		"SORT" => (int)$section["LEFT_MARGIN"],
+		"ITEMS" => array(),
+	);
+}
+
 foreach ($tabs as &$tab)
 {
 	uasort($tab["GROUPS"], function ($a, $b) {

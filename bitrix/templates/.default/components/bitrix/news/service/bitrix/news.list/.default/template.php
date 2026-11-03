@@ -68,10 +68,11 @@ $serviceCatalogCount = function ($count) {
 				}
             ?>
             <div class="service-catalog__cell">
-              <a class="service-catalog__card" href="<?=$groupUrl?>" aria-expanded="false" aria-controls="<?=$panelId?>">
+              <a class="service-catalog__card" href="<?=$groupUrl?>"<?if($groupItems){?> aria-expanded="false" aria-controls="<?=$panelId?>"<?}?>>
                 <span class="service-catalog__name"><?=$groupName?></span>
-                <span class="service-catalog__count"><?=$serviceCatalogCount(count($groupItems))?></span>
+                <?if($groupItems){?><span class="service-catalog__count"><?=$serviceCatalogCount(count($groupItems))?></span><?}?>
               </a>
+              <?if($groupItems){?>
               <div class="service-catalog__panel" id="<?=$panelId?>">
                 <ul class="service-catalog__list">
                   <?foreach($groupItems as $arItem){
@@ -84,6 +85,7 @@ $serviceCatalogCount = function ($count) {
                   <?}?>
                 </ul>
               </div>
+              <?}?>
             </div>
             <?}?>
           </div>
