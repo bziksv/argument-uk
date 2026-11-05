@@ -34,7 +34,7 @@ $this->setFrameMode(true);
 		"SET_LAST_MODIFIED" => $arParams["SET_LAST_MODIFIED"],
 		"SET_TITLE" => $arParams["SET_TITLE"],
 		"MESSAGE_404" => $arParams["MESSAGE_404"],
-		"SET_STATUS_404" => "N",
+		"SET_STATUS_404" => $arParams["SET_STATUS_404"],
 		"SHOW_404" => $arParams["SHOW_404"],
 		"FILE_404" => $arParams["FILE_404"],
 		"INCLUDE_IBLOCK_INTO_CHAIN" => $arParams["INCLUDE_IBLOCK_INTO_CHAIN"],

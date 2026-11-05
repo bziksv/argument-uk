@@ -8,8 +8,10 @@ define("HIDE_SIDEBAR", true);
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-$APPLICATION->AddChainItem('Страница не найдена', '' ,  true);
-$APPLICATION->SetTitle("Страница не найдена");?>
+$APPLICATION->SetPageProperty("title", "Ошибка 404");
+$APPLICATION->SetPageProperty("description", "Запрашиваемая страница не существует, была удалена или перемещена по другому адресу.");
+$APPLICATION->AddChainItem('Ошибка 404', '' ,  true);
+$APPLICATION->SetTitle("Ошибка 404");?>
 
 
 
@@ -19,9 +21,9 @@ $APPLICATION->SetTitle("Страница не найдена");?>
 
 		
 		<article class="services-detailed">
-			<h2 class="title-left">404 Not Found</h2>
+			<h2 class="title-left">Ошибка 404</h2>
 			
-			<p>Ошибка 404. «Страница не найдена» <a href="/" >Главная страница</a></p>	
+			<p>Запрашиваемая страница не существует, была удалена или перемещена по другому адресу. <a href="/">Главная страница</a></p>
 			
 		</article>
 	</div>
