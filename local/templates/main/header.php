@@ -18,7 +18,15 @@ $path=explode('/', $dir);
 		<title>
 			<?$APPLICATION->ShowTitle()?>
 		</title>
-		<?$APPLICATION->ShowHead();?>
+		<?
+		$APPLICATION->ShowMeta("robots");
+		$APPLICATION->ShowMeta("keywords");
+		$APPLICATION->ShowMeta("description");
+		$APPLICATION->ShowLink("canonical");
+		$APPLICATION->ShowCSS(true, true);
+		$APPLICATION->ShowHeadStrings();
+		$APPLICATION->ShowHeadScripts();
+		?>
 		<link href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico" rel="icon" type="image/png" />
 		<link href="<?=SITE_TEMPLATE_PATH?>/img/favicon.png" rel="icon" type="image/png" />
 		<link href="<?=SITE_TEMPLATE_PATH?>/img/apple-touch-icon.png" rel="apple-touch-icon" />

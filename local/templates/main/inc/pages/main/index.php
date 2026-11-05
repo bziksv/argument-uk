@@ -19,9 +19,6 @@
 					?>
 						<div class="container services-section_body" id="ur_list">
 							<div class="row">
-								<div class="col-md-6">
-									<div class="wrapper_service-item">
-
 										<?$APPLICATION->IncludeComponent("bitrix:news.list", "main_service_top_2", Array(
 	"ACTIVE_DATE_FORMAT" => "",	// Формат показа даты
 		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
@@ -84,16 +81,10 @@
 	),
 	false
 );?>
-
-
-								</div>
 							</div>
 						</div>
 						<div class="container services-section_body" id="fiz_list" style="display: none;">
 							<div class="row">
-								<div class="col-md-6">
-									<div class="wrapper_service-item">
-	
 										<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"main_service_top", 
@@ -159,8 +150,6 @@
 	),
 	false
 );?>
-
-								</div>
 							</div>
 						</div>
 						<div class="services-section_footer">

@@ -2587,6 +2587,10 @@ ul:not([class]) li:last-child {
   margin-bottom: 1.05em;
 }
 
+.logo-prime {
+  width: 60%;
+}
+
 .scroll-to-top {
   display: block;
   width: 50px;

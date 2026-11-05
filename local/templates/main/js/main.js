@@ -226,7 +226,7 @@ jQuery(document).ready(function($) {
          type: 'inline',
          removalDelay: 300,
          mainClass: 'my-mfp-zoom-in',
-         focus: '#name',
+         focus: 'input[name="name_f"]',
          alignTop: true,
          callbacks:{
          beforeOpen: function () {

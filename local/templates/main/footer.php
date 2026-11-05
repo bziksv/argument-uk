@@ -317,7 +317,7 @@ $filterPop["ID"] = $filter_pop;
 						<small>и мы свяжемся с вами в ближайшее время</small>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-input" name="name_f" placeholder="ФИО"  id="name">
+						<input type="text" class="form-input" name="name_f" placeholder="ФИО" id="callback-name">
 					</div>
 					<div class="form-group">
 						<input type="tel" class="form-input" name="phone_f" placeholder="Телефон">
@@ -347,7 +347,7 @@ $filterPop["ID"] = $filter_pop;
 						</small>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-input" name="name_f" placeholder="ФИО" id="name">
+						<input type="text" class="form-input" name="name_f" placeholder="ФИО" id="appointment-name">
 					</div>
 					<div class="form-group">
 						<input type="tel" class="form-input" name="phone_f" placeholder="Телефон">
@@ -374,9 +374,9 @@ $filterPop["ID"] = $filter_pop;
 		</div>
 		<!-- end make-appointment -->
 		<link href="<?=SITE_TEMPLATE_PATH?>/css/min.css" rel="stylesheet" />
-		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=legal-1" rel="stylesheet" />
+		<link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?v=html-valid" rel="stylesheet" />
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js?v=5bdf4305"></script>
+		<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js?v=html-ids"></script>
 		<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts_form.js?v=no-recaptcha"></script>
 
 <!-- Yandex.Metrika counter -->

@@ -8,6 +8,10 @@ class CNigesCookiesAcceptPublic
 	{
 		global $APPLICATION;
 
+		if (defined('ADMIN_SECTION') && ADMIN_SECTION === true) {
+			return;
+		}
+
 		if (!CModule::IncludeModule(cookiesaccept_MODULE_ID)) {
 			return;
 		}
@@ -26,6 +30,7 @@ class CNigesCookiesAcceptPublic
 			return;
 		}
 
+		ob_start();
 		$APPLICATION->IncludeComponent(
 			'niges:cookiesaccept',
 			'.default',
@@ -33,5 +38,18 @@ class CNigesCookiesAcceptPublic
 			false,
 			array('HIDE_ICONS' => 'Y')
 		);
+		$banner = ob_get_clean();
+		if (!is_string($banner) || trim($banner) === '') {
+			return;
+		}
+
+		$page = ob_get_contents();
+		if (is_string($page) && preg_match('/<\/body>/i', $page)) {
+			ob_clean();
+			echo preg_replace('/<\/body>/i', $banner . '</body>', $page, 1);
+			return;
+		}
+
+		echo $banner;
 	}
 }
