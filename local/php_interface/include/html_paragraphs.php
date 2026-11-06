@@ -209,3 +209,40 @@ function argument_html_fit_heading_levels(string $html, int $previousLevel): str
 
 	return is_string($fitted) ? $fitted : $html;
 }
+
+/**
+ * Два rel= на одном теге — ошибка «Duplicate attribute rel».
+ * Складывает значения в один атрибут: rel="noopener" rel="nofollow" → rel="noopener nofollow".
+ */
+function argument_html_merge_duplicate_rel(string $html): string
+{
+	if (substr_count(strtolower($html), 'rel=') < 2) {
+		return $html;
+	}
+
+	$merged = preg_replace_callback(
+		'/<[a-zA-Z0-9]+\b[^>]*\brel\s*=\s*(["\']).*?\1[^>]*\brel\s*=\s*(["\']).*?\2[^>]*>/i',
+		static function (array $m): string {
+			$tag = $m[0];
+			$values = [];
+			if (preg_match_all('/\brel\s*=\s*(["\'])(.*?)\1/i', $tag, $rels)) {
+				foreach ($rels[2] as $value) {
+					foreach (preg_split('/\s+/', trim($value)) as $part) {
+						if ($part !== '' && !in_array($part, $values, true)) {
+							$values[] = $part;
+						}
+					}
+				}
+			}
+			$tag = preg_replace('/\s*\brel\s*=\s*(["\']).*?\1/i', '', $tag);
+			if ($values === [] || !is_string($tag)) {
+				return $m[0];
+			}
+
+			return preg_replace('/>$/', ' rel="' . implode(' ', $values) . '">', $tag, 1);
+		},
+		$html
+	);
+
+	return is_string($merged) ? $merged : $html;
+}

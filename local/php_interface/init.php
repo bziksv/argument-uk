@@ -16,4 +16,5 @@ AddEventHandler('main', 'OnEndBufferContent', static function (&$content): void 
 		return;
 	}
 	$content = argument_html_strip_stray_p($content);
+	$content = argument_html_merge_duplicate_rel($content);
 });

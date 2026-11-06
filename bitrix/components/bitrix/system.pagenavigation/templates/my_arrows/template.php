@@ -89,7 +89,7 @@ if($arResult["bDescPageNumbering"] === true)
 		{
 			if ($bPoints)
 			{
-	?>...<?
+	?><li>...</li><?
 				$bPoints = false;
 			}
 		}
@@ -163,7 +163,7 @@ else
 		{
 			if ($bPoints)
 			{
-	?>...<?
+	?><li>...</li><?
 				$bPoints = false;
 			}
 		}
