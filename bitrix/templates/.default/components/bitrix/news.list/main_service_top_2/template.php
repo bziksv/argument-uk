@@ -15,7 +15,7 @@ $rest = array_slice($items, 1);
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
 	<div class="service-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<h4 class="service-item_title"><?=$arItem["NAME"]?></h4>
+		<h2 class="service-item_title"><?=$arItem["NAME"]?></h2>
 		<p><?=$arItem["PREVIEW_TEXT"]?></p>
 		<div class="service-item_more-link">
 			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">Подробнее</a>
@@ -39,7 +39,7 @@ $rest = array_slice($items, 1);
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
 	<div class="service-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<h4 class="service-item_title"><?=$arItem["NAME"]?></h4>
+		<h2 class="service-item_title"><?=$arItem["NAME"]?></h2>
 		<p><?=$arItem["PREVIEW_TEXT"]?></p>
 		<div class="service-item_more-link">
 			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">Подробнее</a>

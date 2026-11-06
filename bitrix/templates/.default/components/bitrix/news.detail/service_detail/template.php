@@ -15,10 +15,10 @@ $this->setFrameMode(true);
 	</div>
 	<?}?>
 	<?if($arResult["DETAIL_TEXT"]){
-		echo $arResult["DETAIL_TEXT"];
+		echo argument_html_fit_heading_levels($arResult["DETAIL_TEXT"], 2);
 	}else{?>
 		<p>
-		<?echo $arResult["PREVIEW_TEXT"];?>
+		<?echo argument_html_fit_heading_levels((string)$arResult["PREVIEW_TEXT"], 2);?>
 	</p>
 	<?}?>
 	<div class="services-detailed_footer">

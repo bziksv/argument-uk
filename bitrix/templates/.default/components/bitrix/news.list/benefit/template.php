@@ -12,7 +12,7 @@ $this->setFrameMode(true);
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 benifit-column" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 					<div class="benefit-item">
 						<div class="benefit-item_header <?=$arItem["PROPERTIES"]["benefit"]["DESCRIPTION"];?>"><?=$arItem["PROPERTIES"]["benefit"]["VALUE"];?></div>
-						<h4 class="benefit-item_title"><?=$arItem["NAME"];?></h4>
+						<h3 class="benefit-item_title"><?=$arItem["NAME"];?></h3>
 						<p>
 							<?=$arItem["PREVIEW_TEXT"];?>
 						</p>

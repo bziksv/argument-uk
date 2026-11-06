@@ -155,3 +155,57 @@ function argument_html_preview_paragraph(string $html): string
 
 	return '<p>' . $html . '</p>';
 }
+
+/**
+ * Не даёт заголовку в тексте перепрыгнуть больше чем на один уровень
+ * после уже выведенного заголовка страницы ($previousLevel).
+ * Сдвинутому тегу добавляется класс heading-fit, чтобы стили h4 остались на новом уровне.
+ */
+function argument_html_fit_heading_levels(string $html, int $previousLevel): string
+{
+	if ($html === '' || !preg_match('/<h[1-6]\b/i', $html)) {
+		return $html;
+	}
+
+	$last = $previousLevel;
+	$stack = [];
+	$fitted = preg_replace_callback(
+		'/<(\/?)(h[1-6])\b([^>]*)>/i',
+		static function (array $m) use (&$last, &$stack): string {
+			$level = (int) substr($m[2], 1);
+			if ($m[1] === '/') {
+				$open = array_pop($stack);
+				if ($open === null) {
+					return $m[0];
+				}
+
+				return '</h' . $open . '>';
+			}
+
+			$out = $level;
+			if ($last > 0 && $out > $last + 1) {
+				$out = $last + 1;
+			}
+			$last = $out;
+			$stack[] = $out;
+			$attrs = $m[3];
+			if ($out !== $level) {
+				if (preg_match('/\bclass\s*=\s*(["\'])(.*?)\1/i', $attrs)) {
+					$attrs = preg_replace(
+						'/\bclass\s*=\s*(["\'])(.*?)\1/i',
+						'class=$1$2 heading-fit$1',
+						$attrs,
+						1
+					);
+				} else {
+					$attrs .= ' class="heading-fit"';
+				}
+			}
+
+			return '<h' . $out . $attrs . '>';
+		},
+		$html
+	);
+
+	return is_string($fitted) ? $fitted : $html;
+}

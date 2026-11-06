@@ -1352,6 +1352,8 @@ ul:not([class]) li:last-child {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 .6em 0;
+  text-align: left;
+  text-transform: none;
 }
 
 .service-item_more-link {
@@ -1564,6 +1566,7 @@ ul:not([class]) li:last-child {
   font-weight: 500;
   margin: 0 0 .1em 0;
   width: 100%;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -1675,6 +1678,8 @@ ul:not([class]) li:last-child {
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 .6em 0;
+  text-align: left;
+  text-transform: none;
 }
 
 .all-services_conpany-link {
@@ -1957,6 +1962,8 @@ ul:not([class]) li:last-child {
   margin: 0 0 .6em 0;
   font-size: 1.25rem;
   font-weight: 500;
+  text-align: left;
+  text-transform: none;
 }
 
 .our-sevices_item-title a {
@@ -2100,10 +2107,13 @@ ul:not([class]) li:last-child {
   font-size: .875rem;
 }
 
-.services-detailed h4 {
+.services-detailed h4,
+.services-detailed .heading-fit {
   font-size: 1.25em;
   font-weight: 500;
   margin: 2em 0 1em 0;
+  text-align: left;
+  text-transform: none;
 }
 
 .services-detailed_footer {
@@ -2265,6 +2275,9 @@ ul:not([class]) li:last-child {
   font-size: 1.25rem;
   line-height: 1.2;
   font-weight: 500;
+  margin: 0 0 .7em;
+  text-align: left;
+  text-transform: none;
 }
 
 .news-item_body {
@@ -2400,8 +2413,18 @@ ul:not([class]) li:last-child {
   margin-bottom: .8em;
 }
 
-.contact-section h4 {
+.contact-section h4,
+.contact-schedule_title {
   margin-bottom: .5em;
+}
+
+.contact-schedule_title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 .5em;
+  text-align: left;
+  text-transform: none;
+  position: static;
 }
 
 .documents_tab-names {
@@ -3121,7 +3144,8 @@ ul:not([class]) li:last-child {
   .our-sevices_section {
     padding-bottom: 1.5em;
   }
-  .services-detailed h4 {
+  .services-detailed h4,
+  .services-detailed .heading-fit {
     margin-top: 1.2em;
   }
   .sidebar-menu_item > a {
@@ -3552,7 +3576,8 @@ ul:not([class]) li:last-child {
   .main-slide_title {
     font-size: 2.4rem;
   }
-  .services-detailed h4 {
+  .services-detailed h4,
+  .services-detailed .heading-fit {
     font-size: 1.125rem;
     margin: .7rem 0;
   }

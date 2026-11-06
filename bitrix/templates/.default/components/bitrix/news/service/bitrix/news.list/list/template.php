@@ -28,9 +28,9 @@ if($arResult['SECTION']['PATH']){
 	</div>
 	<?}?>
 	<?if($arResult["DESCRIPTION"]){
-		echo $arResult["DESCRIPTION"];
+		echo argument_html_fit_heading_levels($arResult["DESCRIPTION"], 1);
 	}elseif($arResult["DESCRIPTION2"]){
-		echo $arResult["DESCRIPTION2"];
+		echo argument_html_fit_heading_levels($arResult["DESCRIPTION2"], 1);
 	}else{?>
 		<p>
 		<?echo $arResult["PREVIEW_TEXT"];?>

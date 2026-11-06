@@ -24,9 +24,9 @@ $this->setFrameMode(true);
         <div class="col-lg-4 col-md-6 col-sm-6 service-column" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
           <div class="popular-services_item">
             <span class="popular-services_item-icon <?=$arItem["PROPERTIES"]["class"]["VALUE"]?>"></span>
-            <h4 class="popular-services_item-title">
+            <h3 class="popular-services_item-title">
               <?=$arItem["NAME"]?>
-            </h4>
+            </h3>
             <p>
               <?=$arItem["PREVIEW_TEXT"]?>
             </p>

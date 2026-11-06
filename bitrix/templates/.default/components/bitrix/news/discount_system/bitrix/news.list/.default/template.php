@@ -16,12 +16,10 @@ $this->setFrameMode(true);
 				</a>
 			</div>
 			<div class="news-item_body">
-				<h4 class="news-item_title">
+				<h2 class="news-item_title">
 					<?=$arItem["NAME"];?>
-				</h4>
-				<p>
-					<?=$arItem["PREVIEW_TEXT"];?>
-				</p>
+				</h2>
+				<?=argument_html_preview_paragraph((string)$arItem["PREVIEW_TEXT"]);?>
 			</div>
 			<div class="news-item_footer">
 				<?if($arItem["DISPLAY_ACTIVE_FROM"]){?><span class="news-item_date"><?=$arItem["DISPLAY_ACTIVE_FROM"]?> г</span><?}?>
