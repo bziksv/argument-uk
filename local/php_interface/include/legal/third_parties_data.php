@@ -16,6 +16,7 @@ return [
 						'https://mc.yandex.ru/',
 						'https://mc.yandex.com/',
 					],
+					'as_text' => true,
 					'text' => 'сервис Яндекс.Метрики; используется для сбора и анализа статистики посещений, действий пользователей и достижения целей',
 				],
 				[
@@ -24,6 +25,7 @@ return [
 						'https://core-renderer-tiles.maps.yandex.net/',
 						'https://log.api-maps.yandex.ru/',
 					],
+					'as_text' => true,
 					'text' => 'сервисы Яндекс.Карт; используются для отображения карты на странице контактов',
 				],
 			],

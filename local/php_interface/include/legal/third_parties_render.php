@@ -53,8 +53,13 @@ function argumentLegalRenderThirdPartyRecommendationLine(array $block): string
 {
 	$links = [];
 	foreach ($block['urls'] as $url) {
+		$label = argument_legal_var($url);
+		if (!empty($block['as_text'])) {
+			$links[] = $label;
+			continue;
+		}
 		$links[] = '<a href="' . argument_legal_h($url) . '" target="_blank" rel="noopener">'
-			. argument_legal_var($url) . '</a>';
+			. $label . '</a>';
 	}
 
 	return implode(', ', $links) . ' — ' . argument_legal_var($block['text']);
